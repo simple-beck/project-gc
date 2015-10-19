@@ -28,18 +28,53 @@ FONT FACE (IN YOUR FACE)
   Be sure to remove the comment brackets.
 */
 
-/*  @font-face {
-      font-family: 'Font Name';
-      src: url('library/fonts/font-name.eot');
-      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
-      font-weight: normal;
-      font-style: normal;
-  }
-*/
+@font-face {
+    font-family: 'ridelife';
+    src: url('../fonts/ridelifelight-webfont.eot');
+    src: url('../fonts/ridelifelight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ridelifelight-webfont.woff2') format('woff2'),
+         url('../fonts/ridelifelight-webfont.woff') format('woff'),
+         url('../fonts/ridelifelight-webfont.ttf') format('truetype'),
+         url('../fonts/ridelifelight-webfont.svg#ridelife') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'ridelife';
+    src: url('../fonts/ridelife-webfont.eot');
+    src: url('../fonts/ridelife-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ridelife-webfont.woff2') format('woff2'),
+         url('../fonts/ridelife-webfont.woff') format('woff'),
+         url('../fonts/ridelife-webfont.ttf') format('truetype'),
+         url('../fonts/ridelife-webfont.svg#ridelife') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ridelife-performancelt';
+    src: url('../fonts/ridelife-performancelt.eot');
+    src: url('../fonts/ridelife-performancelt.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ridelife-performancelt.woff2') format('woff2'),
+         url('../fonts/ridelife-performancelt.woff') format('woff'),
+         url('../fonts/ridelife-performancelt.ttf') format('truetype'),
+         url('../fonts/ridelife-performancelt.svg#ridelife-performancelt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ridelife-performance';
+    src: url('../fonts/ridelife-performance.eot');
+    src: url('../fonts/ridelife-performance.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ridelife-performance.woff2') format('woff2'),
+         url('../fonts/ridelife-performance.woff') format('woff'),
+         url('../fonts/ridelife-performance.ttf') format('truetype'),
+         url('../fonts/ridelife-performance.svg#ridelife-performance') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /*
 The following is based of Typebase:
@@ -51,6 +86,13 @@ I've edited it a bit, but it's a nice starting point.
 // font stacks
 $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+
+$helvetica-thin:    'HelveticaNeue-Thin', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, sans-serif;
+$helvetica:         'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$ridelife: 'ridelife';
+$ridelife-performancelt: 'ridelife-performancelt';
+$ridelife-performance: 'ridelife-performance';
 
 /*
  i imported this one in the functions file so bones would look sweet.
@@ -80,5 +122,150 @@ p {
       -ms-font-feature-settings: "liga", "dlig";
        -o-font-feature-settings: "liga", "dlig";
           font-feature-settings: "liga", "dlig";
+
+  margin-top: 0;
 }
 
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  font-weight: 400; 
+  // no margin top, single-directional margins
+  margin-top: 0;
+  margin-bottom: 0.83rem;
+  
+  /* removing text decoration from all headline links */
+  a {
+    text-decoration: none;
+  }
+}
+
+// additional header/title sizes
+.giga {
+  font-size: 4em;
+  line-height: 1.1250em;
+  word-wrap: break-word;
+}
+.mega {
+  font-size: 3em;
+  line-height: 1.0000em;
+  margin-bottom: 2rem;
+}
+.kilo {
+  font-size: 2.5em;
+  line-height: 1.2000em;
+}
+
+h1, .h1 {
+  font-size: 2.2em;
+  line-height: 1.2;
+}
+
+h2, .h2 {
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+
+h3, .h3 {
+  font-size: 1.25em;
+  line-height: 1.2;
+  margin-bottom: 1.2em;
+}
+
+h4, .h4 {
+  font-size: 1.1em;
+  margin-top: 0;
+}
+
+h5, .h5 {
+  font-size: 0.846em;
+  line-height: 1.8em;
+  font-weight: 400;
+}
+
+/* font-weight */
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+
+.ridelife {
+  font-family: $ridelife;
+}
+
+
+@font-face {
+  font-family: 'app';
+  src: url('../fonts/app.eot?16948878');
+  src: url('../fonts/app.eot?16948878#iefix') format('embedded-opentype'),
+       url('../fonts/app.woff?16948878') format('woff'),
+       url('../fonts/app.ttf?16948878') format('truetype'),
+       url('../fonts/app.svg?16948878#app') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'app';
+    src: url('../font/app.svg?16948878#app') format('svg');
+  }
+}
+*/
+ 
+ [class^="ic-"]:before, [class*=" ic-"]:before {
+  font-family: "app";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.ic-angle-right:before { content: '\e800'; } /* '' */
+.ic-menu:before { content: '\e801'; } /* '' */
+.ic-twitter:before { content: '\e802'; } /* '' */
+.ic-facebook:before { content: '\e803'; } /* '' */
+.ic-angle-left:before { content: '\e804'; } /* '' */
+.ic-pinterest:before { content: '\e805'; } /* '' */
+.ic-gplus:before { content: '\e806'; } /* '' */
+.ic-cancel:before { content: '\e807'; } /* '' */
+.ic-search:before { content: '\e808'; } /* '' */

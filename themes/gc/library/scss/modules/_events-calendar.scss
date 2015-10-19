@@ -1,0 +1,69 @@
+.tribe-events-month {
+
+  .tribe-events-header {
+    padding: .5em 0;
+  }
+  .month-title {
+    text-align: center;
+    color: $blue;
+    font-size: 1.8em;
+    margin-bottom: 0;
+  }
+}
+
+.tribe-events-calendar {
+    table-layout: fixed;
+    width: 100%;
+
+  .vcalendar {
+
+  }
+
+  th {
+    color: $white;
+    background-color: $blue;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: .3em;
+    border: 1px solid #e0ebf6;
+  }
+
+  td {
+    transition: all .2s cubic-bezier(0.55,.085,.68,.53);
+    height: 100px;
+    border: 1px solid #d2d2d2;
+    vertical-align: top;
+    padding: .5em;
+
+    [id*=tribe-events-daynum-] {
+      font-size: 18px;
+      color: $blue;
+    }
+
+    .hentry {
+      font-size: 12px;
+      .entry-title {
+        font-size: 1em;
+        font-weight: 400;
+      }
+    }
+
+    &.tribe-events-has-events {
+      div[id*=tribe-events-daynum-] {
+        a {
+          color: $blue;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &.tribe-events-othermonth {
+      background-color: #e5e5e5;
+      color: #9C9B9B;
+      [id*=tribe-events-daynum-] {
+        color: #9C9B9B;
+      }
+    }
+
+  }
+}

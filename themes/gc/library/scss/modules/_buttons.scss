@@ -73,3 +73,12 @@ and it will create a button dependant on those variables.
   } // end active
 
 } // end blue button
+
+.btn-blue {
+  .vc_btn3 {
+    font-family: $ridelife !important;
+    background-color: $blue !important;
+    font-size: 20px !important;
+    padding: .55em 1em !important;
+  }
+}

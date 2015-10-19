@@ -296,6 +296,84 @@ function bones_excerpt_more($more) {
 	return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'bonestheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'bonestheme' ) .'</a>';
 }
 
+/**
+ * Get Simple Posts
+ */
+function get_simple_post( $key ){
+  // check if exists
+  if( $exists = get_option( $key ) ){
 
+    return get_post( $exists );
+  }else{
+    // Create a simple post
+    $return = wp_insert_post( array('post_name' => 'simple post', 'post_title' => 'Update this', 'post_content' => 'Update this', 'post_excerpt' => '', 'post_type' => 'simple'), true );
+    
+    if( !is_wp_error( $return ) ){
+      // Link created post id with its key in options db table
+      add_option($key, $return);
 
-?>
+      return get_post( $return );
+    }else{
+      echo $return->get_error_message();
+    }
+
+  }
+}
+
+/**
+ * Get Edit link
+ */
+function bones_get_edit_link( $id = null, $label = 'Edit' ){
+
+  if ( !isset($id) ) {
+    $id = get_the_id();
+  }
+  $post_type = get_post_type_object( get_post_type( $id ) );
+  
+  if ( !current_user_can( $post_type->cap->edit_post, $id ) )
+    return '';
+
+  return '<a class="link-edit" href="' . esc_url( get_edit_post_link( $id ) ) . '" title="' . sprintf( esc_attr__( 'Edit %1$s' ), $post_type->labels->singular_name ) . '">' . $label . '</a>';
+}
+
+function get_vc_custom_css( $id = null ) {
+
+  if ( ! $id ) {
+    $id = get_the_ID();
+  }
+
+  if ( $id ) {
+    $shortcodes_custom_css = get_post_meta( $id, '_wpb_shortcodes_custom_css', true );
+    if ( ! empty( $shortcodes_custom_css ) ) {
+      echo '<style type="text/css" data-type="vc_shortcodes-custom-css">';
+      echo $shortcodes_custom_css;
+      echo '</style>';
+    }
+  }
+}
+
+function the_simple_section( $slug, $args = array() ){
+  echo get_simple_section( $slug, $args );
+}
+
+function get_simple_section( $slug, $args = array() ){
+  $class = "page-section section-$slug";
+  if( isset($args['class']) ) {
+    $class .= ' '. $args['class'];
+  }
+
+  $section = get_simple_post( $slug );
+
+  $html = '<section class="'. $class .'">';
+  $html .= '<div class="container">';
+
+  $html .= get_vc_custom_css( $section->ID );
+  $html .= apply_filters( 'the_content', $section->post_content );
+  $html .= bones_get_edit_link( $section->ID );
+
+  $html .= '</div>';
+  $html .= '</section>';
+
+  return $html;
+}
+

@@ -24,6 +24,39 @@ function bones_flush_rewrite_rules() {
 
 // let's create the function for the custom type
 function custom_post_example() { 
+
+	register_post_type( 'simple',
+		// let's now add all the options for this post type
+		array( 'labels' => array(
+			'name' => __( 'Simple Post', 'bonestheme' ),
+			'singular_name' => __( 'Simple Post', 'bonestheme' ),
+			'all_items' => __( 'All Simple Posts', 'bonestheme' ),
+			'add_new' => __( 'Add New', 'bonestheme' ),
+			'add_new_item' => __( 'Add New Simple Post', 'bonestheme' ),
+			'edit' => __( 'Edit', 'bonestheme' ),
+			'edit_item' => __( 'Edit Simple Posts', 'bonestheme' ),
+			'new_item' => __( 'New Simple Post', 'bonestheme' ),
+			'view_item' => __( 'View Simple Post', 'bonestheme' ),
+			'search_items' => __( 'Search Simple Post', 'bonestheme' ),
+			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ),
+			'not_found_in_trash' => __( 'Nothing found in Trash', 'bonestheme' ),
+			'parent_item_colon' => ''
+			),
+			'description' => __( 'This is the Simple Post type', 'bonestheme' ),
+			'public' => true,
+			'publicly_queryable' => true,
+			'exclude_from_search' => false,
+			'show_ui' => false,
+			'query_var' => true,
+			'rewrite'	=> array( 'slug' => 'simple', 'with_front' => true ),
+			'has_archive' => false,
+			'capability_type' => 'post',
+			'hierarchical' => false,
+			/* the next one is important, it tells what's enabled in the post editor */
+			'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt')
+		)
+	);
+		
 	// creating (registering) the custom type 
 	register_post_type( 'custom_type', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 		// let's now add all the options for this post type
@@ -126,4 +159,45 @@ function custom_post_example() {
 	*/
 	
 
-?>
+// require_once ABSPATH . '/wp-content/plugins/cmb2-taxonomy/init.php';
+
+/* Add Meta Field to taxonomies */
+add_filter('cmb2-taxonomy_meta_boxes', 'cmb2_taxonomy_metaboxes');
+
+/**
+ * Define the metabox and field configurations.
+ *
+ * @param  array $meta_boxes
+ * @return array
+ */
+function cmb2_taxonomy_metaboxes( array $meta_boxes ) {
+
+	// Start with an underscore to hide fields from custom fields list
+	$prefix = '_events_';
+
+	/**
+	 * Events Categories metaboxes
+	 */
+	$meta_boxes['events_cats_metabox'] = array(
+		'id'            => 'events_cats_metabox',
+		'title'         => __( 'Colors', 'cmb2' ),
+		'object_types'  => array( 'tribe_events_cat', ), // Taxonomy Type
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		'fields'        => array(
+
+			array(
+				'name'    => __( 'Category color', 'cmb2' ),
+				'desc'    => __( 'Appear through the site', 'cmb2' ),
+				'id'      => $prefix . 'category_color',
+		    'type'    => 'colorpicker',
+		    'default' => '#005eb8',
+			),			
+
+		),
+	);
+
+	return $meta_boxes;
+}

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /******************************************************************
 Site Name:
 Author:
@@ -235,17 +236,6 @@ FONT FACE (IN YOUR FACE)
   http://www.fontsquirrel.com/
   Be sure to remove the comment brackets.
 */
-  /*  @font-face {
-      font-family: 'Font Name';
-      src: url('library/fonts/font-name.eot');
-      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
-      font-weight: normal;
-      font-style: normal;
-  }
-*/
   /*
 The following is based of Typebase:
 https://github.com/devinhunt/typebase.css
@@ -259,6 +249,29 @@ I've edited it a bit, but it's a nice starting point.
 some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
 */
+  /******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+  /* font-weight */
+  /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+  /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+  /*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'app';
+    src: url('../font/app.svg?16948878#app') format('svg');
+  }
+}
+*/
+  /* '' */
+  /* '' */
+  /* '' */
+  /* '' */
+  /* '' */
+  /* '' */
+  /* '' */
+  /* '' */
+  /* '' */
   /******************************************************************
 Site Name:
 Author:
@@ -347,10 +360,10 @@ BOX SIZING
   /* NOTE: value of "padding-box" is only supported in Gecko. So
 probably best not to use it. I mean, were you going to anyway? */
   width: 731px;
-  font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
-  color: #5c6b80;
+  color: #9C9B9B;
   -webkit-font-smoothing: antialiased;
   /*********************
 	LINK STYLES
@@ -365,14 +378,28 @@ probably best not to use it. I mean, were you going to anyway? */
 		larger than an iPhone but smaller than a tablet. Let's call them
 		tweeners.
 		*********************/ }
-  body#tinymce.wp-editor article, body#tinymce.wp-editor aside, body#tinymce.wp-editor details, body#tinymce.wp-editor figcaption, body#tinymce.wp-editor figure, body#tinymce.wp-editor footer, body#tinymce.wp-editor header, body#tinymce.wp-editor hgroup, body#tinymce.wp-editor main, body#tinymce.wp-editor nav, body#tinymce.wp-editor section, body#tinymce.wp-editor summary {
+  body#tinymce.wp-editor article,
+  body#tinymce.wp-editor aside,
+  body#tinymce.wp-editor details,
+  body#tinymce.wp-editor figcaption,
+  body#tinymce.wp-editor figure,
+  body#tinymce.wp-editor footer,
+  body#tinymce.wp-editor header,
+  body#tinymce.wp-editor hgroup,
+  body#tinymce.wp-editor main,
+  body#tinymce.wp-editor nav,
+  body#tinymce.wp-editor section,
+  body#tinymce.wp-editor summary {
     display: block; }
-  body#tinymce.wp-editor audio, body#tinymce.wp-editor canvas, body#tinymce.wp-editor video {
+  body#tinymce.wp-editor audio,
+  body#tinymce.wp-editor canvas,
+  body#tinymce.wp-editor video {
     display: inline-block; }
   body#tinymce.wp-editor audio:not([controls]) {
     display: none;
     height: 0; }
-  body#tinymce.wp-editor [hidden], body#tinymce.wp-editor template {
+  body#tinymce.wp-editor [hidden],
+  body#tinymce.wp-editor template {
     display: none; }
   body#tinymce.wp-editor html {
     font-family: sans-serif;
@@ -387,16 +414,21 @@ probably best not to use it. I mean, were you going to anyway? */
     background: transparent; }
   body#tinymce.wp-editor a:focus {
     outline: thin dotted; }
-  body#tinymce.wp-editor a:active, body#tinymce.wp-editor a:hover {
+  body#tinymce.wp-editor a:active,
+  body#tinymce.wp-editor a:hover {
     outline: 0; }
   body#tinymce.wp-editor h1 {
     font-size: 2em;
     margin: 0.67em 0; }
   body#tinymce.wp-editor abbr[title] {
     border-bottom: 1px dotted; }
-  body#tinymce.wp-editor b, body#tinymce.wp-editor strong, body#tinymce.wp-editor .strong {
+  body#tinymce.wp-editor b,
+  body#tinymce.wp-editor strong,
+  body#tinymce.wp-editor .strong {
     font-weight: bold; }
-  body#tinymce.wp-editor dfn, body#tinymce.wp-editor em, body#tinymce.wp-editor .em {
+  body#tinymce.wp-editor dfn,
+  body#tinymce.wp-editor em,
+  body#tinymce.wp-editor .em {
     font-style: italic; }
   body#tinymce.wp-editor hr {
     -moz-box-sizing: content-box;
@@ -409,19 +441,24 @@ probably best not to use it. I mean, were you going to anyway? */
     hyphens: auto; }
   body#tinymce.wp-editor pre {
     margin: 0; }
-  body#tinymce.wp-editor code, body#tinymce.wp-editor kbd, body#tinymce.wp-editor pre, body#tinymce.wp-editor samp {
+  body#tinymce.wp-editor code,
+  body#tinymce.wp-editor kbd,
+  body#tinymce.wp-editor pre,
+  body#tinymce.wp-editor samp {
     font-family: monospace, serif;
     font-size: 1em; }
   body#tinymce.wp-editor pre {
     white-space: pre-wrap; }
   body#tinymce.wp-editor q {
     quotes: "\201C" "\201D" "\2018" "\2019"; }
-  body#tinymce.wp-editor q:before, body#tinymce.wp-editor q:after {
+  body#tinymce.wp-editor q:before,
+  body#tinymce.wp-editor q:after {
     content: '';
     content: none; }
   body#tinymce.wp-editor small, body#tinymce.wp-editor .small {
     font-size: 75%; }
-  body#tinymce.wp-editor sub, body#tinymce.wp-editor sup {
+  body#tinymce.wp-editor sub,
+  body#tinymce.wp-editor sup {
     font-size: 75%;
     line-height: 0;
     position: relative;
@@ -430,16 +467,21 @@ probably best not to use it. I mean, were you going to anyway? */
     top: -0.5em; }
   body#tinymce.wp-editor sub {
     bottom: -0.25em; }
-  body#tinymce.wp-editor dl, body#tinymce.wp-editor menu, body#tinymce.wp-editor ol, body#tinymce.wp-editor ul {
+  body#tinymce.wp-editor dl,
+  body#tinymce.wp-editor menu,
+  body#tinymce.wp-editor ol,
+  body#tinymce.wp-editor ul {
     margin: 1em 0; }
   body#tinymce.wp-editor dd {
     margin: 0; }
   body#tinymce.wp-editor menu {
     padding: 0 0 0 40px; }
-  body#tinymce.wp-editor ol, body#tinymce.wp-editor ul {
+  body#tinymce.wp-editor ol,
+  body#tinymce.wp-editor ul {
     padding: 0;
     list-style-type: none; }
-  body#tinymce.wp-editor nav ul, body#tinymce.wp-editor nav ol {
+  body#tinymce.wp-editor nav ul,
+  body#tinymce.wp-editor nav ol {
     list-style: none;
     list-style-image: none; }
   body#tinymce.wp-editor img {
@@ -457,25 +499,34 @@ probably best not to use it. I mean, were you going to anyway? */
     /* 1 */
     padding: 0;
     /* 2 */ }
-  body#tinymce.wp-editor button, body#tinymce.wp-editor input, body#tinymce.wp-editor select, body#tinymce.wp-editor textarea {
+  body#tinymce.wp-editor button,
+  body#tinymce.wp-editor input,
+  body#tinymce.wp-editor select,
+  body#tinymce.wp-editor textarea {
     font-family: inherit;
     /* 1 */
     font-size: 100%;
     /* 2 */
     margin: 0;
     /* 3 */ }
-  body#tinymce.wp-editor button, body#tinymce.wp-editor input {
+  body#tinymce.wp-editor button,
+  body#tinymce.wp-editor input {
     line-height: normal; }
-  body#tinymce.wp-editor button, body#tinymce.wp-editor select {
+  body#tinymce.wp-editor button,
+  body#tinymce.wp-editor select {
     text-transform: none; }
-  body#tinymce.wp-editor button, body#tinymce.wp-editor html input[type="button"], body#tinymce.wp-editor input[type="reset"], body#tinymce.wp-editor input[type="submit"] {
+  body#tinymce.wp-editor button,
+  body#tinymce.wp-editor html input[type="button"], body#tinymce.wp-editor input[type="reset"],
+  body#tinymce.wp-editor input[type="submit"] {
     -webkit-appearance: button;
     /* 2 */
     cursor: pointer;
     /* 3 */ }
-  body#tinymce.wp-editor button[disabled], body#tinymce.wp-editor html input[disabled] {
+  body#tinymce.wp-editor button[disabled],
+  body#tinymce.wp-editor html input[disabled] {
     cursor: default; }
-  body#tinymce.wp-editor input[type="checkbox"], body#tinymce.wp-editor input[type="radio"] {
+  body#tinymce.wp-editor input[type="checkbox"],
+  body#tinymce.wp-editor input[type="radio"] {
     box-sizing: border-box;
     /* 1 */
     padding: 0;
@@ -487,9 +538,11 @@ probably best not to use it. I mean, were you going to anyway? */
     -webkit-box-sizing: content-box;
     /* 2 */
     box-sizing: content-box; }
-  body#tinymce.wp-editor input[type="search"]::-webkit-search-cancel-button, body#tinymce.wp-editor input[type="search"]::-webkit-search-decoration {
+  body#tinymce.wp-editor input[type="search"]::-webkit-search-cancel-button,
+  body#tinymce.wp-editor input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none; }
-  body#tinymce.wp-editor button::-moz-focus-inner, body#tinymce.wp-editor input::-moz-focus-inner {
+  body#tinymce.wp-editor button::-moz-focus-inner,
+  body#tinymce.wp-editor input::-moz-focus-inner {
     border: 0;
     padding: 0; }
   body#tinymce.wp-editor textarea {
@@ -504,7 +557,8 @@ probably best not to use it. I mean, were you going to anyway? */
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
-  body#tinymce.wp-editor .image-replacement, body#tinymce.wp-editor .ir {
+  body#tinymce.wp-editor .image-replacement,
+  body#tinymce.wp-editor .ir {
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden; }
@@ -516,8 +570,40 @@ probably best not to use it. I mean, were you going to anyway? */
     body#tinymce.wp-editor .clearfix:after, body#tinymce.wp-editor .cf:after {
       clear: both; }
   body#tinymce.wp-editor span.amp {
-    font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif !important;
+    font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
     font-style: italic; }
+
+@font-face {
+  body#tinymce.wp-editor {
+    font-family: 'ridelife';
+    src: url("../fonts/ridelifelight-webfont.eot");
+    src: url("../fonts/ridelifelight-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ridelifelight-webfont.woff2") format("woff2"), url("../fonts/ridelifelight-webfont.woff") format("woff"), url("../fonts/ridelifelight-webfont.ttf") format("truetype"), url("../fonts/ridelifelight-webfont.svg#ridelife") format("svg");
+    font-weight: 300;
+    font-style: normal; } }
+
+@font-face {
+  body#tinymce.wp-editor {
+    font-family: 'ridelife';
+    src: url("../fonts/ridelife-webfont.eot");
+    src: url("../fonts/ridelife-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ridelife-webfont.woff2") format("woff2"), url("../fonts/ridelife-webfont.woff") format("woff"), url("../fonts/ridelife-webfont.ttf") format("truetype"), url("../fonts/ridelife-webfont.svg#ridelife") format("svg");
+    font-weight: 400;
+    font-style: normal; } }
+
+@font-face {
+  body#tinymce.wp-editor {
+    font-family: 'ridelife-performancelt';
+    src: url("../fonts/ridelife-performancelt.eot");
+    src: url("../fonts/ridelife-performancelt.eot?#iefix") format("embedded-opentype"), url("../fonts/ridelife-performancelt.woff2") format("woff2"), url("../fonts/ridelife-performancelt.woff") format("woff"), url("../fonts/ridelife-performancelt.ttf") format("truetype"), url("../fonts/ridelife-performancelt.svg#ridelife-performancelt") format("svg");
+    font-weight: normal;
+    font-style: normal; } }
+
+@font-face {
+  body#tinymce.wp-editor {
+    font-family: 'ridelife-performance';
+    src: url("../fonts/ridelife-performance.eot");
+    src: url("../fonts/ridelife-performance.eot?#iefix") format("embedded-opentype"), url("../fonts/ridelife-performance.woff2") format("woff2"), url("../fonts/ridelife-performance.woff") format("woff"), url("../fonts/ridelife-performance.ttf") format("truetype"), url("../fonts/ridelife-performance.svg#ridelife-performance") format("svg");
+    font-weight: normal;
+    font-style: normal; } }
   body#tinymce.wp-editor p {
     -ms-word-wrap: break-word;
     word-break: break-word;
@@ -532,13 +618,109 @@ probably best not to use it. I mean, were you going to anyway? */
     -moz-font-feature-settings: "liga=1, dlig=1";
     -ms-font-feature-settings: "liga", "dlig";
     -o-font-feature-settings: "liga", "dlig";
-    font-feature-settings: "liga", "dlig"; }
+    font-feature-settings: "liga", "dlig";
+    margin-top: 0; }
+  body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1, body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2, body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3, body#tinymce.wp-editor h4, body#tinymce.wp-editor .h4, body#tinymce.wp-editor h5, body#tinymce.wp-editor .h5 {
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0.83rem;
+    /* removing text decoration from all headline links */ }
+    body#tinymce.wp-editor h1 a, body#tinymce.wp-editor .h1 a, body#tinymce.wp-editor h2 a, body#tinymce.wp-editor .h2 a, body#tinymce.wp-editor h3 a, body#tinymce.wp-editor .h3 a, body#tinymce.wp-editor h4 a, body#tinymce.wp-editor .h4 a, body#tinymce.wp-editor h5 a, body#tinymce.wp-editor .h5 a {
+      text-decoration: none; }
+  body#tinymce.wp-editor .giga {
+    font-size: 4em;
+    line-height: 1.1250em;
+    word-wrap: break-word; }
+  body#tinymce.wp-editor .mega {
+    font-size: 3em;
+    line-height: 1.0000em;
+    margin-bottom: 2rem; }
+  body#tinymce.wp-editor .kilo {
+    font-size: 2.5em;
+    line-height: 1.2000em; }
+  body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1 {
+    font-size: 2.2em;
+    line-height: 1.2; }
+  body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2 {
+    font-size: 1.5em;
+    line-height: 1.2; }
+  body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3 {
+    font-size: 1.25em;
+    line-height: 1.2;
+    margin-bottom: 1.2em; }
+  body#tinymce.wp-editor h4, body#tinymce.wp-editor .h4 {
+    font-size: 1.1em;
+    margin-top: 0; }
+  body#tinymce.wp-editor h5, body#tinymce.wp-editor .h5 {
+    font-size: 0.846em;
+    line-height: 1.8em;
+    font-weight: 400; }
+  body#tinymce.wp-editor .fw-300 {
+    font-weight: 300; }
+  body#tinymce.wp-editor .fw-400 {
+    font-weight: 400; }
+  body#tinymce.wp-editor .fw-600 {
+    font-weight: 600; }
+  body#tinymce.wp-editor .ridelife {
+    font-family: "ridelife"; }
+
+@font-face {
+  body#tinymce.wp-editor {
+    font-family: 'app';
+    src: url("../fonts/app.eot?16948878");
+    src: url("../fonts/app.eot?16948878#iefix") format("embedded-opentype"), url("../fonts/app.woff?16948878") format("woff"), url("../fonts/app.ttf?16948878") format("truetype"), url("../fonts/app.svg?16948878#app") format("svg");
+    font-weight: normal;
+    font-style: normal; } }
+  body#tinymce.wp-editor [class^="ic-"]:before, body#tinymce.wp-editor [class*=" ic-"]:before {
+    font-family: "app";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+  body#tinymce.wp-editor .ic-angle-right:before {
+    content: '\e800'; }
+  body#tinymce.wp-editor .ic-menu:before {
+    content: '\e801'; }
+  body#tinymce.wp-editor .ic-twitter:before {
+    content: '\e802'; }
+  body#tinymce.wp-editor .ic-facebook:before {
+    content: '\e803'; }
+  body#tinymce.wp-editor .ic-angle-left:before {
+    content: '\e804'; }
+  body#tinymce.wp-editor .ic-pinterest:before {
+    content: '\e805'; }
+  body#tinymce.wp-editor .ic-gplus:before {
+    content: '\e806'; }
+  body#tinymce.wp-editor .ic-cancel:before {
+    content: '\e807'; }
+  body#tinymce.wp-editor .ic-search:before {
+    content: '\e808'; }
   body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
-    color: #2980b9;
+    color: #f01d4f;
     /* on hover */
     /* on click */ }
     body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
-      color: #216693; }
+      color: #d10e3c; }
     body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
   body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1, body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2, body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3, body#tinymce.wp-editor h4, body#tinymce.wp-editor .h4, body#tinymce.wp-editor h5, body#tinymce.wp-editor .h5 {
@@ -567,7 +749,7 @@ probably best not to use it. I mean, were you going to anyway? */
     margin: 0 0 1.5em; }
   body#tinymce.wp-editor table {
     width: 100%;
-    border: 1px solid #eaedf2;
+    border: 1px solid #9C9B9B;
     margin-bottom: 1.5em; }
     body#tinymce.wp-editor table caption {
       margin: 0 0 7px;
@@ -576,24 +758,24 @@ probably best not to use it. I mean, were you going to anyway? */
       text-transform: uppercase;
       letter-spacing: 1px; }
   body#tinymce.wp-editor tr {
-    border-bottom: 1px solid #eaedf2; }
+    border-bottom: 1px solid #9C9B9B; }
     body#tinymce.wp-editor tr:nth-child(even) {
       background-color: #f8f9fa; }
   body#tinymce.wp-editor td {
     padding: 7px;
-    border-right: 1px solid #eaedf2; }
+    border-right: 1px solid #9C9B9B; }
     body#tinymce.wp-editor td:last-child {
       border-right: 0; }
   body#tinymce.wp-editor th {
     background-color: #f8f9fa;
-    border-bottom: 1px solid #eaedf2;
-    border-right: 1px solid #eaedf2; }
+    border-bottom: 1px solid #9C9B9B;
+    border-right: 1px solid #9C9B9B; }
     body#tinymce.wp-editor th:last-child {
       border-right: 0; }
   body#tinymce.wp-editor blockquote {
     margin: 0 0 1.5em 0.75em;
     padding: 0 0 0 0.75em;
-    border-left: 3px solid #2980b9;
+    border-left: 3px solid #005eb8;
     font-style: italic;
     color: #9fa6b4; }
   body#tinymce.wp-editor dd {
@@ -605,7 +787,11 @@ probably best not to use it. I mean, were you going to anyway? */
     margin: 0 0 1.5em 0;
     max-width: 100%;
     height: auto; }
-  body#tinymce.wp-editor .size-auto, body#tinymce.wp-editor .size-full, body#tinymce.wp-editor .size-large, body#tinymce.wp-editor .size-medium, body#tinymce.wp-editor .size-thumbnail {
+  body#tinymce.wp-editor .size-auto,
+  body#tinymce.wp-editor .size-full,
+  body#tinymce.wp-editor .size-large,
+  body#tinymce.wp-editor .size-medium,
+  body#tinymce.wp-editor .size-thumbnail {
     max-width: 100%;
     height: auto; }
   body#tinymce.wp-editor pre {

@@ -39,7 +39,9 @@ the whole project.
 @import "partials/mixins";
 
 // the grid
-@import "partials/grid";
+@import "partials/bgrid";
+
+@import "partials/misc";
 
 /*********************
 IMPORTING MODULES
@@ -67,6 +69,11 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 
 // styles in base.scss
 @import "breakpoints/base";
+
+// Pages
+@import "pages/frontpage";
+
+@import "modules/events-calendar";
 
 /*********************
 LARGER MOBILE DEVICES

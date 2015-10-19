@@ -2,9 +2,9 @@
 
 			<div id="content">
 
-				<div id="inner-content" class="wrap cf">
+				<div id="inner-content" class="container">
 
-						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						<main id="main" class="" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -46,7 +46,7 @@
 									?>
 								</section> <?php // end article section ?>
 
-								<footer class="article-footer cf">
+								<footer class="article-footer">
 
 								</footer>
 
@@ -57,8 +57,6 @@
 							<?php endwhile; endif; ?>
 
 						</main>
-
-						<?php get_sidebar(); ?>
 
 				</div>
 
