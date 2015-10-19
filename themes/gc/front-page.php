@@ -5,27 +5,25 @@
         <div id="inner-content" class="container">
             <div class="row">
 
-              <div class="col-sm-9">
-                <main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+              <main id="main" class="col-sm-9" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-                  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                  <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+                <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-                    <section class="entry-content cf" itemprop="articleBody">
-                      <?php the_content(); ?>
-                    </section> <?php // end article section ?>
+                  <section class="entry-content cf" itemprop="articleBody">
+                    <?php the_content(); ?>
+                  </section> <?php // end article section ?>
 
-                    <footer class="article-footer">
-                      <?php echo bones_get_edit_link( get_the_id() ); ?>
-                    </footer>
+                  <footer class="article-footer">
+                    <?php echo bones_get_edit_link( get_the_id() ); ?>
+                  </footer>
 
-                  </article>
+                </article>
 
-                  <?php endwhile; endif; ?>
+                <?php endwhile; endif; ?>
 
-                </main>
-              </div>
+              </main>
 
               <div class="col-sm-3">
                 <?php $section = get_simple_post('home-side'); ?>

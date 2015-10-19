@@ -1,0 +1,26 @@
+.has-ribbon {
+
+    &:before {
+      $ribbon-width: 2em;
+      
+      content: '';
+
+      border-width: 1.2em;
+      border-color: red;
+      border-style: solid;
+      border-left: $ribbon-width solid #0070ba;
+      border-right: $ribbon-width solid #00b2eb;
+      border-bottom-color: transparent;
+      border-bottom-width: 1.4em;
+      border-top: none;
+      position: absolute;
+      bottom: -1.7em;
+      margin: 0 auto;
+      width: 0em;
+      height: 100%;
+      right: 0;
+      left: 0;
+
+      z-index: -1;
+    }
+}

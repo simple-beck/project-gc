@@ -526,6 +526,11 @@ mobile. Make sure to double check these!
 			*/ }
 
 /* end .footer-links */
+/* Pages */
+/* frontpage */
+.frontpage-top-banner .logo {
+  display: inline-block; }
+
 /******************************************************************
 Site Name:
 Author:
@@ -536,8 +541,8 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop.
 
 ******************************************************************/
-.wrap {
-  width: 1040px; }
+.frontpage-top-banner .logo {
+  font-size: 1.2em; }
 
 /*
 you can call the larger styles if you want, but there's really no need

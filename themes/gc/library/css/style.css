@@ -1330,6 +1330,25 @@ probably best not to use it. I mean, were you going to anyway? */
 .affix {
   position: fixed; }
 
+.has-ribbon:before {
+  content: '';
+  border-width: 1.2em;
+  border-color: red;
+  border-style: solid;
+  border-left: 2em solid #0070ba;
+  border-right: 2em solid #00b2eb;
+  border-bottom-color: transparent;
+  border-bottom-width: 1.4em;
+  border-top: none;
+  position: absolute;
+  bottom: -1.7em;
+  margin: 0 auto;
+  width: 0em;
+  height: 100%;
+  right: 0;
+  left: 0;
+  z-index: -1; }
+
 /*********************
 IMPORTING MODULES
 Modules are reusable blocks or elements we use throughout the project.
@@ -2274,6 +2293,25 @@ FOOTER STYLES
   box-shadow: 0px 0px 14px 4px #e0e0e0;
   padding: 1.5em; }
 
+/* frontpage top banner */
+.frontpage-top-banner {
+  position: relative; }
+  .frontpage-top-banner .logo {
+    display: none;
+    position: absolute;
+    z-index: 10001;
+    width: 18.5em;
+    right: 0;
+    left: 0;
+    top: 1em;
+    margin: auto;
+    outline: none; }
+    .frontpage-top-banner .logo:before {
+      font-size: 2.5em;
+      height: 120%; }
+    .frontpage-top-banner .logo img {
+      display: block; }
+
 .latest-events-list {
   color: #fff; }
   .latest-events-list .item {
@@ -2569,7 +2607,11 @@ mobile. Make sure to double check these!
 			it's very rare to have multi-depth menus in
 			the footer.
 			*/ }
-  /* end .footer-links */ }
+  /* end .footer-links */
+  /* Pages */
+  /* frontpage */
+  .frontpage-top-banner .logo {
+    display: inline-block; } }
 
 /*********************
 DESKTOP
@@ -2588,13 +2630,27 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop.
 
 ******************************************************************/
-  .wrap {
-    width: 1040px; } }
+  .frontpage-top-banner .logo {
+    font-size: 1.2em; } }
 
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
 *********************/
+@media only screen and (min-width: 1240px) {
+  /******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Super Large Monitor Stylesheet
+
+You can add some advanced styles here if you like. This kicks in
+on larger screens.
+
+******************************************************************/
+  .frontpage-top-banner .logo {
+    font-size: 1.6em; } }
+
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

@@ -16,6 +16,32 @@
   
 }
 
+/* frontpage top banner */
+.frontpage-top-banner {
+  position: relative;
+  .logo {
+    display: none;
+    position: absolute;
+    z-index: 10001;    
+    width: 18.5em;
+    right: 0;
+    left: 0;
+    top: 1em;
+    margin: auto;
+    // font-size: 1.6em;
+    outline: none;
+
+    &:before {
+      font-size: 2.5em;
+      height: 120%;
+    }
+
+    img {
+      display: block;
+    }
+  }
+}
+
 .latest-events-list {
   color: $white;
   .item {
@@ -69,3 +95,4 @@
     margin-right: .2em;
   }
 }
+

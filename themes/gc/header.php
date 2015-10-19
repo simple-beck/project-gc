@@ -44,6 +44,14 @@
 
 		<div id="container">
 
+      <section class="frontpage-top-banner">
+        <a class="logo has-ribbon" href="" title="Giant Sydney">
+          <img src="<?php echo get_template_directory_uri(); ?>/library/images/logo-giant-sydney.jpg" alt="Giant Sydney Logo">
+        </a>
+
+        <?php echo do_shortcode( '[rev_slider alias="frontpage-banner"]' ); ?>
+      </section>      
+
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
 				<div id="inner-header" class="container">
