@@ -25,6 +25,14 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+#container {
+	background-color: #f6f6f6;
+	&.freezed {
+    height: 100%;
+    overflow: hidden;
+	}	
+}
+
 img {
 	max-width: 100%;
 }
@@ -106,19 +114,23 @@ a {
 HEADER STYLES
 *********************/
 
-.header {
+#header {
 	background-color: $blue;
 	color: $white;
 
-	.search-form {
-		display: inline-block;
+	.search-form-wrap {
+		text-align: right;
+	}
+
+	.search-form {		
+		display: none;
 
 		.search-field {
 			background-color: #337ec6;
 			border-radius: 100px;
-			margin: .5em 0;
+			margin: .6em 0;
 			padding: .3em 1em;
-			width: 7em;
+			width: 5em;
 			color: $white;
 			display: inline-block;
 
@@ -151,23 +163,24 @@ HEADER STYLES
 		display: inline-block;
 		margin: .4em 0;
 		vertical-align: top;
-		margin-right: 2em;
+		// margin-right: 2em;
 		img {
 			display: block;
 		}
 	}
 
 .top-nav {
-	display: inline-block;
 	vertical-align: top;
 	.menu-item {
 		a {
 			text-decoration: none;
-			padding: .5em .5em;
+			// padding: .5em .5em;
+			padding: .95em .3em .75em .3em;
 			text-decoration: none;
 			line-height: 1;
 			font-weight: 400;
-			font-size: 22px;
+			// font-size: 22px;
+			font-size: 16px;
 			text-transform: uppercase;
 			font-family: $ridelife;
 			&:hover, &:focus {
@@ -179,6 +192,10 @@ HEADER STYLES
 	}
 }	
 
+#toggle-menu {
+	color: $white;
+	font-size: 1.8em;
+}
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -260,6 +277,18 @@ and more scalable.
 	}  /* end current highlighters */
 
 } /* end .nav */
+
+.snap-drawer {
+	background-color: #323944;
+	.menu-item {
+		a {
+	    color: #fff;
+	    border-bottom: 1px solid rgba(35, 35, 35, 0.51);
+	    border-top: 1px solid rgba(166, 166, 166, 0.13);
+	    padding: 0.7em 0.75em 0.7em 1.5em;
+		}
+	}
+}
 
 /*********************
 POSTS & CONTENT STYLES
@@ -411,7 +440,6 @@ POSTS & CONTENT STYLES
 			}
 
 			img {
-				margin: 0 0 1.5em 0;
 				max-width: 100%;
 				height: auto;
 			}
@@ -870,8 +898,75 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $black;
-	color: $light-gray;
+}
+
+.social-links {
+  margin: 0;
+  padding: 0;
+  
+  .item-facebook {
+    background: url(../images/icon-facebook.png) no-repeat center transparent;
+  }
+
+  .item-twitter {
+    background: url(../images/icon-twitter.png) no-repeat center transparent;
+  }
+
+  .item-instagram {
+    background: url(../images/icon-instagram.png) no-repeat center transparent;
+  }
+
+  .item-vimeo {
+    background: url(../images/icon-vimeo.png) no-repeat center transparent;
+  }
+
+  .item-strava {
+    background: url(../images/icon-strava.png) no-repeat center transparent;
+  }
+
+  .item {
+    display: inline-block;
+    float: left;
+    background-size: 3em;
+    &:hover {
+      opacity: .8;
+    }
+    a {
+      padding: 1em 1em;
+      overflow: hidden;
+      text-indent: -500px;
+      display: block;
+      outline: none;
+    }
+  }
+
+  /* one item */
+  .item:first-child:nth-last-child(1) {
+    width: 100%;
+  }
+
+  /* two items */
+  .item:first-child:nth-last-child(2),
+  .item:first-child:nth-last-child(2) ~ li {
+    width: 50%;
+  }
+
+  /* three items */
+  .item:first-child:nth-last-child(3),
+  .item:first-child:nth-last-child(3) ~ li {
+    width: 33.3333%;
+  }
+
+  /* four items */
+  .item:first-child:nth-last-child(4),
+  .item:first-child:nth-last-child(4) ~ li {
+    width: 25%;
+  }
+  /* four items */
+  .item:first-child:nth-last-child(5),
+  .item:first-child:nth-last-child(5) ~ li {
+    width: 20%;
+  }
 }
 
 	/*
@@ -897,10 +992,12 @@ FOOTER STYLES
 	.copyright {}
 
 .page-section {
+	margin-bottom: 3em;
+	
 	.container {
     background-color: $white;
     box-shadow: 0px 0px 14px 4px #e0e0e0;
-    padding: 1.5em;		
+ 		padding: 1em;
 	}
 }
 

@@ -285,12 +285,129 @@ mobile. Make sure to double check these!
 	}
 } /* end .footer-links */
 
+.social-links {
+  
+  .item-facebook {
+    background: url(../images/logo-facebook.png) no-repeat center #3a589e;
+  }
+
+  .item-twitter {
+    background: url(../images/logo-twitter.png) no-repeat center #00aced;
+  }
+
+  .item-instagram {
+    background: url(../images/logo-instagram.png) no-repeat center #3d6d95;
+  }
+
+  .item-vimeo {
+    background: url(../images/logo-vimeo.png) no-repeat center #4b7890;
+  }
+
+  .item-strava {
+    background: url(../images/logo-strava.png) no-repeat center #f36523;
+  }
+
+  .item {
+    background-size: 8em;
+    a {
+      padding: 2.5em 1em;
+    }
+  }
+
+  /* one item */
+  .item:first-child:nth-last-child(1) {
+    width: 100%;
+  }
+
+  /* two items */
+  .item:first-child:nth-last-child(2),
+  .item:first-child:nth-last-child(2) ~ li {
+    width: 50%;
+  }
+
+  /* three items */
+  .item:first-child:nth-last-child(3),
+  .item:first-child:nth-last-child(3) ~ li {
+    width: 33.3333%;
+  }
+
+  /* four items */
+  .item:first-child:nth-last-child(4),
+  .item:first-child:nth-last-child(4) ~ li {
+    width: 25%;
+  }
+  /* four items */
+  .item:first-child:nth-last-child(5),
+  .item:first-child:nth-last-child(5) ~ li {
+    width: 20%;
+  }
+}
 
 /* Pages */
 
 /* frontpage */
 .frontpage-top-banner {
+
   .logo {
     display: inline-block;
+  }
+}
+
+.home #main {
+	padding: 3em;
+}
+
+.section-events-calendar {
+	.container {
+		padding: 3em;
+	}	
+}
+
+.section-club-membership {
+	.container {
+		padding: 3em;
+	}	
+  .column-join-club {
+  	padding-right: 4em;
+  }
+}
+.section-gccs-social {
+	.container {
+		padding: 3em;
+	}
+
+	.column-2 {
+		padding-left: 8em;
+	}
+}
+
+#header {
+	.search-form {
+		display: inline-block;
+	}
+}
+
+#toggle-menu {
+	display: none;
+}
+
+.page-section {
+	.container {
+    padding: 2.5em;		
+	}
+}
+
+/* Club Kit */
+.section-club-kit {
+  .cta-badge {
+    display: block;
+  }
+}
+
+/* Calendar */
+.latest-events-list {
+	text-align: left;
+  .item {
+    display: block;
   }
 }

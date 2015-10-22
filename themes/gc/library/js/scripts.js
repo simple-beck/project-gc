@@ -104,11 +104,102 @@ function loadGravatars() {
 	}
 } // end function
 
+var app = {
+  side_menu : {
+    menu : null,
+    init : function() {
+
+      // creat a Snap menu
+      this.menu = new Snap({
+          element: document.getElementById('container'),
+          disable: 'left',
+      });
+
+      this.menu.on('animated', function(){
+
+        console.log('menu animated');
+        var snapper_state = app.side_menu.menu.state();
+
+        if( snapper_state.state === 'closed' ){
+          // remove freezer
+          jQuery('#container').removeClass('freezed');
+        } else {
+          // freeze up content area
+          jQuery('#container').addClass('freezed');
+        }
+      });
+
+      // disable it by default
+      this.menu.disable();
+
+      // Get view port
+      viewport = updateViewportDimensions();
+      // if we're above or equal to 768 fire this off
+      if( viewport.width >= 768 ) {
+        console.log('desktop');
+        // disable sidebar menu
+        this.menu.disable();
+        // move navigation to header
+        this.move_to_header();
+      } else {
+        console.log('mobile');
+        // move navigation to side-menu
+        this.move_to_side();
+        // enable snap menu
+        this.menu.enable();
+      }
+    },
+
+    move_to_side: function(){
+      if( !jQuery('body').hasClass('snap-js') ){
+        // add class to body
+        jQuery('body').addClass('snap-js');
+        // add class to main container
+        jQuery('#container').addClass('snap-content');
+
+        jQuery('.top-nav').prependTo('body').wrap('<div class="snap-drawers"><div class="snap-drawer snap-drawer-right"></div></div>');
+
+        // add logo
+        jQuery('.snap-drawer-right').prepend('<img src="http://wp5.dev/wp-content/themes/gc/library/images/logo-giant-sydney.jpg" alt="Giant Sydney Logo">')
+      }
+    },
+    move_to_header: function(){
+      if( jQuery('body').hasClass('snap-js') ){
+        // remove from body
+        jQuery('body').removeClass('snap-js');
+        // remove class fron main container
+        jQuery('#container').removeClass('snap-content');
+        // put back to the header
+        jQuery('.top-nav').prependTo('.main-menu-wrap');
+        // delete snap drawers
+        jQuery('.snap-drawers').remove();
+      }
+    }
+  }
+}
 
 /*
  * Put all your regular jQuery in here.
 */
 jQuery(document).ready(function($) {
+
+  /*Smooth scroll*/
+  $('a[href*=#]:not([href=#]):not([href*=#vc_images])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+
+        $('a[href*=#]:not([href=#]):not([href*=#vc_images])').removeClass('active');
+        $(this).addClass('active');
+
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
 
   /*
    * Let's fire off the gravatar function
@@ -116,5 +207,48 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
 
+  /* Initialize Sidebar menu */
+  app.side_menu.init();
+
+  /* Hanle Mobile Menu Toggle */
+  $('#toggle-menu').on('click', function(){
+    if( app.side_menu.menu.state().state=="right" ){
+      app.side_menu.menu.close();
+    } else {
+      app.side_menu.menu.open('right');
+    }
+  });
+
+  // Handle differences on window resize
+  $(window).resize(function () {
+
+    // if we're on the home page, we wait the set amount (in function above) then fire the function
+    waitForFinalEvent( function() {
+        // update the viewport, in case the window size has changed
+        viewport = updateViewportDimensions();
+
+        // if we're above or equal to 768 fire this off
+        if( viewport.width >= 768 ) {
+
+          // disable sidebar menu
+          app.side_menu.menu.disable();
+
+          // move navigation to header
+          app.side_menu.move_to_header();
+
+        } else {
+          
+          // enable sidebar menu
+          app.side_menu.menu.enable();
+
+          // move navigation to header
+          app.side_menu.move_to_side();
+
+        }
+      }
+      , timeToWaitForLast
+      , "function-identifier-string");
+
+  }); 
 
 }); /* end of as page load scripts */

@@ -12,6 +12,15 @@
     background-color: $white;
     box-shadow: 0px 0px 14px 4px #e0e0e0;
     padding: 1.5em;
+
+    .entry-content {
+      > .vc_row {
+        > .wpb_column {
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+
   }
   
 }
@@ -44,12 +53,14 @@
 
 .latest-events-list {
   color: $white;
+  text-align: center;
   .item {
     position: relative;
     display: inline-block;
     margin-bottom: 1.7em;
     a {
       color: inherit;
+      display: block;
     }
     .bg-image {
       display: block;
@@ -85,6 +96,9 @@
   .item {
     display: inline-block;    
     margin-right: 1em;
+    &:last-child {
+      margin-right: 0;
+    }
   }
   .ic-block {
     display: inline-block;
@@ -96,3 +110,202 @@
   }
 }
 
+/* Instagram */
+.techinstagramlink-content {
+  .instagram-unit-col2 {
+    width: 49%;
+  }
+
+  .loadbutton {
+    display: none;
+  }
+}
+
+/* Calendar section */
+.section-events-calendar {
+}
+
+/* GCCS Social section */
+.section-gccs-social {
+  margin-bottom: 0;
+  .container {
+    padding-bottom: 0;
+  }
+}
+
+
+/* GCCS Club Membership */
+.section-club-membership {
+  .column-join-club {
+
+  }
+}
+
+.wpcf7-form {
+  li {
+    border-bottom: 1px solid #c8c8c8;
+    list-style: none;
+    padding:  0 0 .3em 0;
+    margin-bottom: .3em;
+  }
+  label {
+    display: inline-block;
+    min-width: 8em;
+  }
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"] {
+    display: inline-block;
+    min-width: 0;
+    width: auto;
+    max-width: none;
+    background: transparent;
+  }
+  textarea {
+    background: transparent;
+    padding: 1em 0;
+  }
+
+  textarea,
+  input {
+    &::-webkit-input-placeholder {
+       color: #e0e0e0;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+       color: #e0e0e0;  
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+       color: #e0e0e0;  
+    }
+
+    &:-ms-input-placeholder {  
+       color: #e0e0e0;  
+    }    
+  }
+
+  .wpcf7-submit {
+    font-family: $ridelife;
+    border: 1px solid #cecece;
+    background: transparent;
+    color: $blue;
+    padding: 1em 2em;
+    font-size: 1.3em;
+    letter-spacing: .7px;
+  }
+
+  .subscribe {
+    font-size: .85em;
+    color: inherit;
+  }
+  .link-newsletter {
+    text-decoration: none;
+    font-size: .85em;
+    font-weight: 500;
+  }
+
+  .ajax-loader {
+    float: left;
+  }
+}
+
+
+/* Club Kit */
+.section-club-kit {
+  .container {
+    position: relative;
+  }
+  .cta-badge {
+    display: none;
+  }
+}
+
+.cta-badge-wrap {
+  position: static;
+}
+.cta-badge {
+  position: absolute;
+  top: 1em;
+  right: 1.5em;
+  text-align: center;
+  z-index: 1;
+  font-size: 1.6em;
+  &:before {
+    height: 133%;
+    bottom: -3em;
+    top: -1em;
+  }
+  .badge-content {
+    font-size: 1.6em;
+    line-height: 1.1;
+    background: #363437;
+    color: $white;
+    padding: .7em 1em;
+    font-family: $ridelife;
+    width: 5.5em;
+  }
+}
+
+.product-list {
+  text-align: center;
+  margin-left: -1em;
+  margin-right: -1em;
+  .item {
+    display: inline-block;
+    box-shadow: 0px 0px 10px 0px #ccc;
+    margin: 1em;
+    padding: .5em .6em;
+    position: relative;
+    text-align: center;
+
+    a {
+      display: block;
+      text-decoration: none;
+    }
+    .featured-image {
+
+    }
+    .item-title {
+      font-size: 1.2em;
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    .link-edit {
+      position: absolute;
+      right: 0;
+      bottom: 2em;
+    }
+  }
+}
+
+.link-edit {
+  background: orange;
+  color: $white;
+  display: inline-block;
+  padding: .3em 1em;
+}
+
+.type-product {
+  padding: 2rem;
+  .images-list-wrap {
+    margin-bottom: 3rem;
+  }
+  .images-list {
+    margin: 0;
+  }
+  
+  .product-title {
+    font-family: $ridelife;
+    color: $blue;
+  }
+  .product-price {
+    font-size: $kilo;
+    color: $blue;
+  }
+
+  .entry-content {
+  }
+}

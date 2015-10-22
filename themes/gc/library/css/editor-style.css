@@ -272,6 +272,9 @@ H1, H2, H3, H4, H5 STYLES
   /* '' */
   /* '' */
   /* '' */
+  /* '' */
+  /* '' */
+  /* '' */
   /******************************************************************
 Site Name:
 Author:
@@ -715,12 +718,18 @@ probably best not to use it. I mean, were you going to anyway? */
     content: '\e807'; }
   body#tinymce.wp-editor .ic-search:before {
     content: '\e808'; }
+  body#tinymce.wp-editor .ic-cancel-1:before {
+    content: '\e809'; }
+  body#tinymce.wp-editor .ic-instagram:before {
+    content: '\e80a'; }
+  body#tinymce.wp-editor .ic-vimeo:before {
+    content: '\e80b'; }
   body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
-    color: #f01d4f;
+    color: #005eb8;
     /* on hover */
     /* on click */ }
     body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
-      color: #d10e3c; }
+      color: #00478a; }
     body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
   body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1, body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2, body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3, body#tinymce.wp-editor h4, body#tinymce.wp-editor .h4, body#tinymce.wp-editor h5, body#tinymce.wp-editor .h5 {

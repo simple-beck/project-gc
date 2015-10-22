@@ -264,6 +264,18 @@ h5, .h5 {
   content: '\e808'; }
 
 /* '' */
+.ic-cancel-1:before {
+  content: '\e809'; }
+
+/* '' */
+.ic-instagram:before {
+  content: '\e80a'; }
+
+/* '' */
+.ic-vimeo:before {
+  content: '\e80b'; }
+
+/* '' */
 /******************************************************************
 Site Name:
 Author:
@@ -526,10 +538,82 @@ mobile. Make sure to double check these!
 			*/ }
 
 /* end .footer-links */
+.social-links {
+  /* one item */
+  /* two items */
+  /* three items */
+  /* four items */
+  /* four items */ }
+  .social-links .item-facebook {
+    background: url(../images/logo-facebook.png) no-repeat center #3a589e; }
+  .social-links .item-twitter {
+    background: url(../images/logo-twitter.png) no-repeat center #00aced; }
+  .social-links .item-instagram {
+    background: url(../images/logo-instagram.png) no-repeat center #3d6d95; }
+  .social-links .item-vimeo {
+    background: url(../images/logo-vimeo.png) no-repeat center #4b7890; }
+  .social-links .item-strava {
+    background: url(../images/logo-strava.png) no-repeat center #f36523; }
+  .social-links .item {
+    background-size: 8em; }
+    .social-links .item a {
+      padding: 2.5em 1em; }
+  .social-links .item:first-child:nth-last-child(1) {
+    width: 100%; }
+  .social-links .item:first-child:nth-last-child(2),
+  .social-links .item:first-child:nth-last-child(2) ~ li {
+    width: 50%; }
+  .social-links .item:first-child:nth-last-child(3),
+  .social-links .item:first-child:nth-last-child(3) ~ li {
+    width: 33.3333%; }
+  .social-links .item:first-child:nth-last-child(4),
+  .social-links .item:first-child:nth-last-child(4) ~ li {
+    width: 25%; }
+  .social-links .item:first-child:nth-last-child(5),
+  .social-links .item:first-child:nth-last-child(5) ~ li {
+    width: 20%; }
+
 /* Pages */
 /* frontpage */
 .frontpage-top-banner .logo {
   display: inline-block; }
+
+.home #main {
+  padding: 3em; }
+
+.section-events-calendar .container {
+  padding: 3em; }
+
+.section-club-membership .container {
+  padding: 3em; }
+
+.section-club-membership .column-join-club {
+  padding-right: 4em; }
+
+.section-gccs-social .container {
+  padding: 3em; }
+
+.section-gccs-social .column-2 {
+  padding-left: 8em; }
+
+#header .search-form {
+  display: inline-block; }
+
+#toggle-menu {
+  display: none; }
+
+.page-section .container {
+  padding: 2.5em; }
+
+/* Club Kit */
+.section-club-kit .cta-badge {
+  display: block; }
+
+/* Calendar */
+.latest-events-list {
+  text-align: left; }
+  .latest-events-list .item {
+    display: block; }
 
 /******************************************************************
 Site Name:
@@ -543,6 +627,13 @@ be seen on the Desktop.
 ******************************************************************/
 .frontpage-top-banner .logo {
   font-size: 1.2em; }
+
+#header .search-form .search-field {
+  width: 7em; }
+
+.top-nav .menu-item a {
+  padding: 0.8em 0.5em 0.6em 0.5em;
+  font-size: 19px; }
 
 /*
 you can call the larger styles if you want, but there's really no need

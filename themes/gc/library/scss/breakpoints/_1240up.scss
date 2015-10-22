@@ -14,3 +14,20 @@ on larger screens.
     font-size: 1.6em;
   }
 }
+
+#header {
+  .search-form {
+    .search-field {
+      width: 9em;
+    }
+  }
+}
+
+.top-nav {
+  .menu-item {
+    a {
+      padding: .6em .5em .4em .5em;
+      font-size: 21px;
+    }
+  }
+} 

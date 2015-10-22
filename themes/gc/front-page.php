@@ -60,7 +60,35 @@
 
           </div>
         </section>
-        
+
+        <section class="page-section section-club-kit">
+          <?php $section = get_simple_post('club-kit'); ?>
+          <?php echo get_vc_custom_css( $section->ID ); ?>
+
+          <div class="container">
+
+            <div class="row">
+              <div class="col-sm-9">
+                <?php echo apply_filters( 'the_content', $section->post_content ); ?>
+                <?php echo bones_get_edit_link( $section->ID ); ?>
+              </div>
+              <div class="col-sm-3 cta-badge-wrap">
+                <div class="cta-badge has-ribbon">
+                  <div class="badge-content">
+                    Don't Miss Out!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <?php include_once '_query-products.php' ?>
+          </div>
+
+        </section>
+
+        <?php the_simple_section( 'club-membership' ); ?>
+
+        <?php //the_simple_section( 'gccs-social' ); ?>
 
       </div>
 

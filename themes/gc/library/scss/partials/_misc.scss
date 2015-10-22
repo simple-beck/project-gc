@@ -2,7 +2,7 @@
 
     &:before {
       $ribbon-width: 2em;
-      
+
       content: '';
 
       border-width: 1.2em;
@@ -23,4 +23,26 @@
 
       z-index: -1;
     }
+}
+
+.fb_iframe_widget {
+  width: 100%;
+  > span {
+    width: 100% !important;
+    height: 530px !important;
+  }
+  iframe {
+    width: 100% !important;
+    height: 530px !important;
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
 }

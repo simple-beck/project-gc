@@ -142,34 +142,42 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   }
 }
 
+// Font sizes in variables
+$giga: 4em;
+$mega: 3em;
+$kilo: 2.5em;
+$h1: 2.2em;
+$h2: 1.5em;
+$h3: 1.25em;
+
 // additional header/title sizes
 .giga {
-  font-size: 4em;
+  font-size: $giga;
   line-height: 1.1250em;
   word-wrap: break-word;
 }
 .mega {
-  font-size: 3em;
+  font-size: $mega;
   line-height: 1.0000em;
   margin-bottom: 2rem;
 }
 .kilo {
-  font-size: 2.5em;
+  font-size: $kilo;
   line-height: 1.2000em;
 }
 
 h1, .h1 {
-  font-size: 2.2em;
+  font-size: $h1;
   line-height: 1.2;
 }
 
 h2, .h2 {
-  font-size: 1.5em;
+  font-size: $h2;
   line-height: 1.2;
 }
 
 h3, .h3 {
-  font-size: 1.25em;
+  font-size: $h3;
   line-height: 1.2;
   margin-bottom: 1.2em;
 }
@@ -197,7 +205,6 @@ h5, .h5 {
 .fw-600 {
   font-weight: 600;
 }
-
 
 .ridelife {
   font-family: $ridelife;
@@ -269,3 +276,6 @@ h5, .h5 {
 .ic-gplus:before { content: '\e806'; } /* '' */
 .ic-cancel:before { content: '\e807'; } /* '' */
 .ic-search:before { content: '\e808'; } /* '' */
+.ic-cancel-1:before { content: '\e809'; } /* '' */
+.ic-instagram:before { content: '\e80a'; } /* '' */
+.ic-vimeo:before { content: '\e80b'; } /* '' */

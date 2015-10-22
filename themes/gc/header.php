@@ -52,35 +52,47 @@
         <?php echo do_shortcode( '[rev_slider alias="frontpage-banner"]' ); ?>
       </section>      
 
-			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+			<header id="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
 				<div id="inner-header" class="container">
 
-          <a id="logo" href="<?php echo home_url(); ?>" rel="nofollow">
-            <img src="<?php echo get_template_directory_uri(); ?>/library/images/logo-small.png" alt="Giant Cycles">
-          </a>
+          <div class="row">
+            <div class="col-sm-1 col-xs-2">
+              <a id="logo" href="<?php echo home_url(); ?>" rel="nofollow">
+                <img src="<?php echo get_template_directory_uri(); ?>/library/images/logo-small.png" alt="Giant Cycles">
+              </a>              
+            </div>
+            <div class="col-sm-8 col-xs-10">
+              <div class="main-menu-wrap">
+                <nav class="top-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                  <?php wp_nav_menu(array(
+                             'container' => false,                           // remove nav container
+                             'container_class' => 'menu',                 // class of container (should you choose to use it)
+                             'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
+                             'menu_class' => 'nav',               // adding custom nav class
+                             'theme_location' => 'main-nav',                 // where it's located in the theme
+                             'before' => '',                                 // before the menu
+                                   'after' => '',                                  // after the menu
+                                   'link_before' => '',                            // before each link
+                                   'link_after' => '',                             // after each link
+                                   'depth' => 0,                                   // limit the depth of the nav
+                             'fallback_cb' => ''                             // fallback function (if there is one)
+                  )); ?>
+                </nav>   
+              </div>
+           
 
-					<nav class="top-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<?php wp_nav_menu(array(
-    					         'container' => false,                           // remove nav container
-    					         'container_class' => 'menu',                 // class of container (should you choose to use it)
-    					         'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-    					         'menu_class' => 'nav',               // adding custom nav class
-    					         'theme_location' => 'main-nav',                 // where it's located in the theme
-    					         'before' => '',                                 // before the menu
-        			               'after' => '',                                  // after the menu
-        			               'link_before' => '',                            // before each link
-        			               'link_after' => '',                             // after each link
-        			               'depth' => 0,                                   // limit the depth of the nav
-    					         'fallback_cb' => ''                             // fallback function (if there is one)
-						)); ?>
+            </div>
+            <div class="col-sm-3 search-form-wrap">
+              <form role="search" method="get" id="search-form" class="search-form" action="">
+                <input type="search" id="s" class="search-field" name="s" value="">
+                <button type="submit" id="search-submit"><i class="ic-search"></i></button>
+              </form>
 
-					</nav>
+              <a id="toggle-menu" href="#" title="Toggle Menu"><i class="ic-menu"></i></a>
 
-          <form role="search" method="get" id="search-form" class="search-form" action="">
-            <input type="search" id="s" class="search-field" name="s" value="">
-            <button type="submit" id="search-submit"><i class="ic-search"></i></button>
-          </form>
+            </div>
+          </div>
 
 				</div>
 

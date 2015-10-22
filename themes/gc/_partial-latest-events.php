@@ -13,13 +13,14 @@
   // Retrieve the next 3 upcoming events
   $events = tribe_get_events( array(
     'posts_per_page' => 3,
-    'start_date' => time()
   ) );
+  
 ?>
+
 <ul class="latest-events-list">
 <?php foreach( $events as $event ): ?>
 
-  <li class="item">
+  <li class="item cf">
     <a href="#" title="">
 
       <?php $src = wp_get_attachment_image_src( get_post_thumbnail_id( $event->ID ), 'event-medium' ); ?>
