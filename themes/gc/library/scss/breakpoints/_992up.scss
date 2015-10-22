@@ -1,0 +1,34 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+
+.frontpage-top-banner {
+  .logo {
+    font-size: 1.2em;
+  }
+}
+
+#header {
+  .search-form {
+    .search-field {
+      width: 7em;
+    }
+  }
+}
+
+.top-nav {
+  .menu-item {
+    a {
+      // padding: .5em .5em;
+      padding: .8em .5em .6em .5em;
+      font-size: 19px;
+    }
+  }
+} 
