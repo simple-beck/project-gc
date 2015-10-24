@@ -78,6 +78,7 @@ add_image_size( 'bones-thumb-300', 300, 100, true );
 add_image_size( 'event-medium', 300, 300, true );
 add_image_size( 'product-thumb', 200, 185, true );
 add_image_size( 'product-large', 530, 500, true );
+add_image_size( 'event-popup', 260, 370, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -233,5 +234,34 @@ function bones_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
+
+// handle ajax call for a single event
+//First we add the actions hooks
+add_action('wp_ajax_get_single_event', 'get_single_event_callback' );
+add_action('wp_ajax_nopriv_get_single_event', 'get_single_event_callback' );
+ 
+function get_single_event_callback() {
+
+  if( !isset( $_POST['event_id'] ) ) {
+    echo 'no event id provided';
+    die();
+  }
+
+  $event = tribe_events_get_event( $_POST['event_id'] );
+
+  ob_start();
+  include_once '_partial-single-event.php';
+  $html = ob_get_contents();
+  ob_end_clean();
+
+  $result = array(
+    'status' => 'success',
+    'html'  => $html
+  );
+
+  echo json_encode( $result );
+
+  exit(1);
+}
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

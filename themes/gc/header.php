@@ -44,7 +44,7 @@
 
 		<div id="container">
 
-      <section class="frontpage-top-banner">
+       <section class="frontpage-top-banner">
         <a class="logo has-ribbon" href="" title="Giant Sydney">
           <img src="<?php echo get_template_directory_uri(); ?>/library/images/logo-giant-sydney.jpg" alt="Giant Sydney Logo">
         </a>
@@ -62,7 +62,7 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/library/images/logo-small.png" alt="Giant Cycles">
               </a>              
             </div>
-            <div class="col-sm-8 col-xs-10">
+            <div class="col-sm-8 col-xs-6">
               <div class="main-menu-wrap">
                 <nav class="top-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
                   <?php wp_nav_menu(array(
@@ -83,7 +83,7 @@
            
 
             </div>
-            <div class="col-sm-3 search-form-wrap">
+            <div class="col-sm-3 search-form-wrap col-xs-4">
               <form role="search" method="get" id="search-form" class="search-form" action="">
                 <input type="search" id="s" class="search-field" name="s" value="">
                 <button type="submit" id="search-submit"><i class="ic-search"></i></button>

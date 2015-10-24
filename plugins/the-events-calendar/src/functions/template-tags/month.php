@@ -29,7 +29,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * @return void
 	 **/
 	function tribe_show_month( $args = array(), $template_path = 'month/content' ) {
-
+		
 		// temporarily unset the tribe bar params so they don't apply
 		$hold_tribe_bar_args = array();
 		foreach ( $_REQUEST as $key => $value ) {

@@ -2423,6 +2423,52 @@ body.snap-js {
   cursor: -ms-grabbing;
   cursor: grabbing; }
 
+.tribe-events-month .tribe-events-header {
+  padding: .5em 0; }
+
+.tribe-events-month .month-title {
+  text-align: center;
+  color: #005eb8;
+  font-size: 1.8em;
+  margin-bottom: 0; }
+
+.tribe-events-calendar {
+  table-layout: fixed;
+  width: 100%; }
+  .tribe-events-calendar th {
+    color: #fff;
+    background-color: #005eb8;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: .3em;
+    border: 1px solid #e0ebf6; }
+  .tribe-events-calendar td {
+    transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    height: 100px;
+    border: 1px solid #d2d2d2;
+    vertical-align: top;
+    padding: .5em; }
+    .tribe-events-calendar td:hover {
+      box-shadow: rgba(0, 0, 0, 0.2) 0 0 10px; }
+    .tribe-events-calendar td [id*=tribe-events-daynum-] {
+      font-size: 18px;
+      color: #005eb8; }
+    .tribe-events-calendar td .hentry {
+      font-size: 12px;
+      margin-bottom: .5em;
+      text-decoration: underline; }
+      .tribe-events-calendar td .hentry .entry-title {
+        font-size: 1em;
+        font-weight: 400; }
+    .tribe-events-calendar td.tribe-events-has-events div[id*=tribe-events-daynum-] a {
+      color: #005eb8;
+      text-decoration: none; }
+    .tribe-events-calendar td.tribe-events-othermonth {
+      background-color: #e5e5e5;
+      color: #9C9B9B; }
+      .tribe-events-calendar td.tribe-events-othermonth [id*=tribe-events-daynum-] {
+        color: #9C9B9B; }
+
 /*********************
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
@@ -2950,8 +2996,9 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-.footer {
-  clear: both; }
+#footer {
+  clear: both;
+  padding-top: 1em; }
 
 .social-links {
   margin: 0;
@@ -3052,36 +3099,6 @@ FOOTER STYLES
     .frontpage-top-banner .logo img {
       display: block; }
 
-.latest-events-list {
-  color: #fff;
-  text-align: center; }
-  .latest-events-list .item {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 1.7em; }
-    .latest-events-list .item a {
-      color: inherit;
-      display: block; }
-    .latest-events-list .item .bg-image {
-      display: block; }
-    .latest-events-list .item .item-content {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      left: 0; }
-      .latest-events-list .item .item-content .title-wrap {
-        background-color: rgba(0, 94, 184, 0.5);
-        display: block;
-        padding: 0.5em 1em;
-        line-height: 1.3; }
-    .latest-events-list .item .date {
-      font-size: 2.5em;
-      line-height: 1;
-      padding: 1rem; }
-      .latest-events-list .item .date .num {
-        display: block;
-        font-size: 2.8em; }
-
 /* Categories List */
 .events-categories-list .item {
   display: inline-block;
@@ -3104,7 +3121,6 @@ FOOTER STYLES
 .techinstagramlink-content .loadbutton {
   display: none; }
 
-/* Calendar section */
 /* GCCS Social section */
 .section-gccs-social {
   margin-bottom: 0; }
@@ -3247,47 +3263,79 @@ FOOTER STYLES
     font-size: 2.5em;
     color: #005eb8; }
 
-.tribe-events-month .tribe-events-header {
-  padding: .5em 0; }
+/* Calendar section */
+.section-events-calendar .tribe-events-visuallyhidden {
+  display: none; }
 
-.tribe-events-month .month-title {
-  text-align: center;
+.section-events-calendar .tribe-events-page-title {
   color: #005eb8;
-  font-size: 1.8em;
-  margin-bottom: 0; }
+  text-align: center; }
 
-.tribe-events-calendar {
-  table-layout: fixed;
-  width: 100%; }
-  .tribe-events-calendar th {
-    color: #fff;
-    background-color: #005eb8;
-    font-size: 11px;
+.section-events-calendar #tribe-events-header .tribe-events-sub-nav {
+  margin: 0;
+  margin-top: -2.2em; }
+  .section-events-calendar #tribe-events-header .tribe-events-sub-nav a {
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: .5em;
     text-transform: uppercase;
-    padding: .3em;
-    border: 1px solid #e0ebf6; }
-  .tribe-events-calendar td {
-    transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
-    height: 100px;
-    border: 1px solid #d2d2d2;
-    vertical-align: top;
-    padding: .5em; }
-    .tribe-events-calendar td [id*=tribe-events-daynum-] {
-      font-size: 18px;
-      color: #005eb8; }
-    .tribe-events-calendar td .hentry {
-      font-size: 12px; }
-      .tribe-events-calendar td .hentry .entry-title {
-        font-size: 1em;
-        font-weight: 400; }
-    .tribe-events-calendar td.tribe-events-has-events div[id*=tribe-events-daynum-] a {
-      color: #005eb8;
-      text-decoration: none; }
-    .tribe-events-calendar td.tribe-events-othermonth {
-      background-color: #e5e5e5;
-      color: #9C9B9B; }
-      .tribe-events-calendar td.tribe-events-othermonth [id*=tribe-events-daynum-] {
-        color: #9C9B9B; }
+    font-size: 14px;
+    line-height: 1; }
+    .section-events-calendar #tribe-events-header .tribe-events-sub-nav a span {
+      font-size: 1.5em; }
+  .section-events-calendar #tribe-events-header .tribe-events-sub-nav .tribe-events-nav-previous {
+    float: left; }
+  .section-events-calendar #tribe-events-header .tribe-events-sub-nav .tribe-events-nav-next {
+    float: right; }
+
+.events-content-wrap.is_loading {
+  opacity: .5; }
+
+.latest-events-list {
+  color: #fff;
+  text-align: center; }
+  .latest-events-list .item {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.7em;
+    min-height: 15em;
+    background-color: #ccc; }
+    .latest-events-list .item a {
+      color: inherit;
+      display: block; }
+    .latest-events-list .item .bg-image {
+      display: block; }
+    .latest-events-list .item .item-content {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0; }
+      .latest-events-list .item .item-content .title-wrap {
+        background-color: rgba(0, 94, 184, 0.5);
+        display: block;
+        padding: 0.5em 1em;
+        line-height: 1.3; }
+    .latest-events-list .item .date {
+      font-size: 2.5em;
+      line-height: 1;
+      padding: 1rem; }
+      .latest-events-list .item .date .num {
+        display: block;
+        font-size: 2.8em; }
+
+/* event POPUP */
+.single-event-popup {
+  padding: 1em; }
+  .single-event-popup .event-title {
+    font-family: "ridelife";
+    font-size: 2.2em; }
+  .single-event-popup .meta-info li {
+    margin-bottom: .2em; }
+  .single-event-popup .meta-info label {
+    text-transform: uppercase;
+    font-weight: 600; }
+  .single-event-popup .recurringinfo {
+    display: none; }
 
 /*********************
 LARGER MOBILE DEVICES
@@ -3490,6 +3538,8 @@ SIDEBARS & ASIDES
   /*********************
 FOOTER STYLES
 *********************/
+  #footer {
+    padding-top: 0; }
   /*
 you'll probably need to do quite a bit
 of overriding here if you styled them for

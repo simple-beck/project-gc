@@ -24,11 +24,12 @@ class Tribe__Events__Activation_Page {
 	 * @return array          The filtered Links
 	 */
 	public function update_complete_actions( $actions, $plugin ) {
-		$plugins = array();
+		$plugins = esc_attr( $_GET['plugins'] );
 
-		if ( ! empty( $_GET['plugins'] ) ) {
-			$plugins = explode( ',', esc_attr( $_GET['plugins'] ) );
+		if ( false !== strpos( $plugins, ',' ) ){
+			$plugins = explode( ',', $plugins );
 		}
+		$plugins = (array) $plugins;
 
 		if ( ! in_array( Tribe__Events__Main::instance()->pluginDir . 'the-events-calendar.php', $plugins ) ){
 			return $actions;
@@ -193,7 +194,7 @@ class Tribe__Events__Activation_Page {
 	}
 
 	protected function welcome_page_title() {
-		return __( 'Welcome to The Events Calendar', 'the-events-calendar' );
+		return __( 'Welcome to The Events Calendar', 'tribe-events-calendar' );
 	}
 
 	protected function welcome_page_content() {
@@ -213,7 +214,7 @@ class Tribe__Events__Activation_Page {
 	}
 
 	protected function update_page_title() {
-		return __( 'Thanks for Updating The Events Calendar', 'the-events-calendar' );
+		return __( 'Thanks for Updating The Events Calendar', 'tribe-events-calendar' );
 	}
 
 	protected function update_page_content() {

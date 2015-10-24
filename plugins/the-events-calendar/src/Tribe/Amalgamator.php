@@ -257,9 +257,9 @@ class Tribe__Events__Amalgamator {
 	 * @return string
 	 */
 	public static function migration_button( $text = '' ) {
-		$text     = $text ? $text : __( 'Merge Duplicates', 'the-events-calendar' );
+		$text     = $text ? $text : __( 'Merge Duplicates', 'tribe-events-calendar' );
+		$html     = '<a href="%s" class="button">%s</a>';
 		$settings = Tribe__Events__Settings::instance();
-
 		// get the base settings page url
 		$url  = apply_filters(
 			'tribe_settings_url', add_query_arg(
@@ -269,11 +269,11 @@ class Tribe__Events__Amalgamator {
 				), admin_url( 'edit.php' )
 			)
 		);
-
-		$url  = add_query_arg( array( 'amalgamate' => '1' ), $url );
+		$url  = esc_url( add_query_arg( array( 'amalgamate' => '1' ), $url ) );
 		$url  = wp_nonce_url( $url, 'amalgamate_duplicates' );
+		$html = sprintf( $html, $url, $text );
 
-		return sprintf( '<a href="%s" class="button">%s</a>', $url, $text );
+		return $html;
 	}
 
 	/**

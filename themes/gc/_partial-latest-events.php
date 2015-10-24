@@ -2,6 +2,24 @@
   // get all categories for events
   $cats = get_terms('tribe_events_cat', $args);
 ?>
+
+<!-- set categories colors -->
+<style type="text/css" media="screen">
+  <?php foreach( $cats as $item ): ?>
+    <?php $term_color = get_term_meta( $item->term_id , '_events_category_color', true ) ?>
+    
+    .tribe-events-category-<?php echo $item->slug; ?> .entry-title, 
+    .tribe-events-category-<?php echo $item->slug; ?> .entry-title a,
+    .tribe-events-category-<?php echo $item->slug; ?> .event-title,
+    .tribe-events-category-<?php echo $item->slug; ?> .event-title a, 
+    .tribe-events-category-<?php echo $item->slug; ?> .meta-info label
+    {
+      color: <?php echo $term_color; ?>;
+    }
+  <?php endforeach; ?>
+</style>
+
+<!-- Events Categories  -->
 <ul class="events-categories-list">
   <?php foreach( $cats as $item ): ?>
     <?php $term_color = get_term_meta( $item->term_id , '_events_category_color', true ) ?>
@@ -14,14 +32,13 @@
   $events = tribe_get_events( array(
     'posts_per_page' => 3,
   ) );
-  
 ?>
 
 <ul class="latest-events-list">
 <?php foreach( $events as $event ): ?>
 
   <li class="item cf">
-    <a href="#" title="">
+    <a href="#" class="link" data-event_id="<?php echo $event->ID; ?>">
 
       <?php $src = wp_get_attachment_image_src( get_post_thumbnail_id( $event->ID ), 'event-medium' ); ?>
       <img class="bg-image" src="<?php echo $src[0]; ?>" alt="">

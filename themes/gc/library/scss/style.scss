@@ -66,6 +66,8 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 
 @import "modules/lightslider";
 
+@import "modules/events-calendar";
+
 /*********************
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
@@ -78,8 +80,8 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 
 // Pages
 @import "pages/frontpage";
+@import "pages/section-calendar";
 
-@import "modules/events-calendar";
 
 /*********************
 LARGER MOBILE DEVICES

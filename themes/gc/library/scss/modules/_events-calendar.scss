@@ -35,6 +35,10 @@
     vertical-align: top;
     padding: .5em;
 
+    &:hover {
+      box-shadow: rgba(0,0,0,.2) 0 0 10px;
+    }
+
     [id*=tribe-events-daynum-] {
       font-size: 18px;
       color: $blue;
@@ -46,6 +50,8 @@
         font-size: 1em;
         font-weight: 400;
       }
+      margin-bottom: .5em;
+      text-decoration: underline;
     }
 
     &.tribe-events-has-events {

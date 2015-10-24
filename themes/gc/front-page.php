@@ -2,7 +2,7 @@
 
       <div id="content">
 
-        <div id="inner-content" class="container">
+         <div id="inner-content" class="container">
             <div class="row">
 
               <main id="main" class="col-sm-9" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
@@ -43,7 +43,7 @@
           <div class="container">
             
             <div class="row">
-              <div class="col-sm-9">
+              <div class="col-sm-8 col-md-9">
                 <?php $section = get_simple_post('events-calendar'); ?>
                 <?php echo get_vc_custom_css( $section->ID ); ?>
                 <?php echo apply_filters( 'the_content', $section->post_content ); ?>
@@ -52,7 +52,7 @@
                 <!-- Calendar -->
                 <?php include_once '_events-calendar.php'; ?>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-4 col-md-3">
 
                 <?php include '_partial-latest-events.php' ?>
               </div>
@@ -88,7 +88,7 @@
 
         <?php the_simple_section( 'club-membership' ); ?>
 
-        <?php //the_simple_section( 'gccs-social' ); ?>
+        <?php the_simple_section( 'gccs-social' ); ?>
 
       </div>
 

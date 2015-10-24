@@ -41,7 +41,7 @@ if ( tribe_get_address( $venue_id ) ) : ?>
 // This locations's city.
 if ( tribe_get_city( $venue_id ) ) :
 	if ( tribe_get_address( $venue_id ) ) : ?>
-		<br>
+		<!-- <br> -->
 	<?php endif; ?>
 	<span class="locality"><?php echo tribe_get_city( $venue_id ); ?></span><span class="delimiter">,</span>
 <?php endif; ?>

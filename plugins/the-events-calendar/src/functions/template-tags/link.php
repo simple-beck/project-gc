@@ -112,9 +112,10 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * @return string URL
 	 */
 	function tribe_get_events_link() {
-		$plugin = Tribe__Events__Main::instance();
+		$tribe_ecp = Tribe__Events__Main::instance();
+		$output    = $tribe_ecp->getLink( 'home' );
 
-		return apply_filters( 'tribe_get_events_link', $plugin->getLink( 'home' ) );
+		return apply_filters( 'tribe_get_events_link', $output );
 	}
 
 	/**

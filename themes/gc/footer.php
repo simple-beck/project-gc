@@ -1,4 +1,4 @@
-			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+			<footer id="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
 				<div id="inner-footer" class="container">
           <?php $section = get_simple_post('footer-info'); ?>
@@ -14,6 +14,9 @@
 
 		<?php // all js scripts are loaded in library/bones.php ?>
 		<?php wp_footer(); ?>
+    <div style="display:none;">
+      <div id="loaded-event-placeholder"></div>
+    </div>
 
 	</body>
 
