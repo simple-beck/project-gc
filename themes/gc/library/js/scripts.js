@@ -160,7 +160,7 @@ var app = {
         jQuery('.top-nav').prependTo('body').wrap('<div class="snap-drawers"><div class="snap-drawer snap-drawer-right"></div></div>');
 
         // add logo
-        jQuery('.snap-drawer-right').prepend('<img src="http://wp5.dev/wp-content/themes/gc/library/images/logo-giant-sydney.jpg" alt="Giant Sydney Logo">')
+        jQuery('.snap-drawer-right').prepend('<img src="/wp-content/themes/gc/library/images/logo-giant-sydney.jpg" alt="Giant Sydney Logo">')
       }
     },
     move_to_header: function(){

@@ -33,7 +33,9 @@ HEADER STYLES
 
 .header {}
 
-	#logo {}
+	#logo {
+    margin: .35em 0;
+  }
 
 /*********************
 NAVIGATION STYLES
@@ -311,6 +313,8 @@ mobile. Make sure to double check these!
 
   .item {
     background-size: 8em;
+    display: inline-block;
+    float: left;
     a {
       padding: 2.5em 1em;
     }
@@ -349,14 +353,18 @@ mobile. Make sure to double check these!
 
 /* frontpage */
 .frontpage-top-banner {
-
   .logo {
-    display: inline-block;
+    font-size: 1em;
   }
 }
 
-.home #main {
-	padding: 3em;
+.home {
+  #main {
+    padding: 3em;
+  }
+  #content {
+    padding-top: 2.5em;
+  }
 }
 
 .section-events-calendar {
@@ -394,6 +402,7 @@ mobile. Make sure to double check these!
 }
 
 .page-section {
+  margin-bottom: 3.2em;
 	.container {
     padding: 2.5em;		
 	}
@@ -406,10 +415,55 @@ mobile. Make sure to double check these!
   }
 }
 
+.type-product {
+  padding: 2em;
+}
+
 /* Calendar */
+.events-content-wrap {
+  display: block;
+}
+.events-nav-bar {
+  // display: block;
+  display: none;
+}
+
+.events-categories-list {
+  margin-bottom: 1.7em;
+}
+
 .latest-events-list {
-	text-align: left;
+  color: $white;
+  margin: 0 -.5em;
   .item {
     display: block;
+    &:nth-child(4){
+      display: none;
+    }
+    .item-link {
+      min-height: 15em;
+    }
+    .bg-image-mask {
+
+    }
+    .bg-image {
+    }
+    .item-content {
+
+      .title-wrap {
+        padding: .5em 1em;
+      }
+      .item-title {
+
+      }
+    }
+ 
+    .date {
+      font-size: 2.5em;
+      padding: .5em 1rem;
+      .num {
+
+      }
+    }    
   }
 }

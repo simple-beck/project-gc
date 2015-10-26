@@ -21,8 +21,24 @@
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article">
 
-			<?php $additional_images = get_post_meta( get_the_id(), '_product_additional_images', true ); ?>
+      <div class="row product-info">
+      	<div class="col-sm-6">
+					<h1 class="single-title product-title"><?php the_title(); ?></h1>
+					<?php $price = get_post_meta( get_the_id(), '_product_price', true ); ?>
+					<?php if( $price ): ?>
+						<div class="product-price"><?php printf( '$%s', get_post_meta( get_the_id(), '_product_price', true )); ?></div>
+					<?php endif; ?>
+      	</div>
 
+      	<div class="col-sm-6">
+					<section class="entry-content">
+						<?php echo apply_filters('the_content', get_post_meta( get_the_id(), '_product_short_info', true ) );?>
+					</section> <!-- end article section -->
+      	</div>      	
+      </div>
+
+
+			<?php $additional_images = get_post_meta( get_the_id(), '_product_additional_images', true ); ?>
       <?php if( $additional_images ): ?>
 	      <div class="images-list-wrap">
 	        <ul class="images-list">
@@ -39,31 +55,11 @@
 
 	        </ul>
 	      </div>
-      <?php endif; ?>
-
-      <div class="row">
-      	<div class="col-sm-6">
-					<h1 class="single-title product-title"><?php the_title(); ?></h1>
-					<?php $price = get_post_meta( get_the_id(), '_product_price', true ); ?>
-					<?php if( $price ): ?>
-						<div class="product-price"><?php printf( '$%s', get_post_meta( get_the_id(), '_product_price', true )); ?></div>
-					<?php endif; ?>
-
-      	</div>
-
-      	<div class="col-sm-6">
-					<section class="entry-content">
-						<?php echo apply_filters('the_content', get_post_meta( get_the_id(), '_product_short_info', true ) );?>
-					</section> <!-- end article section -->
-      	</div>
-
-      </div>
+      <?php endif; ?>      
 
 		</article>
 
 		<?php endwhile;  endif; ?>
-
-
 
 	<?php die(); ?>
 <!-- else if normal request -->

@@ -16,6 +16,7 @@
 		<?php wp_footer(); ?>
     <div style="display:none;">
       <div id="loaded-event-placeholder"></div>
+      <div id="loaded-item-placeholder"></div>
     </div>
 
 	</body>

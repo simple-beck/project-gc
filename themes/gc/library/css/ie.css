@@ -113,12 +113,12 @@ p {
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
+  -ms-hyphens: auto;
   hyphens: auto;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 3;
   -webkit-font-feature-settings: "liga", "dlig";
-  -moz-font-feature-settings: "liga=1, dlig=1";
   -ms-font-feature-settings: "liga", "dlig";
   -o-font-feature-settings: "liga", "dlig";
   font-feature-settings: "liga", "dlig";
@@ -404,6 +404,18 @@ check your menus here. do they look good?
 do they need tweaking?
 */
 /* end .footer-links */
+.latest-events-list .item .date {
+  font-size: 2.5em;
+  padding: .5rem; }
+
+.section-club-membership .submit-wrap {
+  text-align: left; }
+  .section-club-membership .submit-wrap .col-sm-6 {
+    width: 50%;
+    float: left; }
+    .section-club-membership .submit-wrap .col-sm-6:first-child {
+      margin-top: 1.5em; }
+
 /******************************************************************
 Site Name:
 Author:
@@ -429,6 +441,9 @@ LAYOUT & GRID STYLES
 /*********************
 HEADER STYLES
 *********************/
+#logo {
+  margin: .35em 0; }
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -558,7 +573,9 @@ mobile. Make sure to double check these!
   .social-links .item-strava {
     background: url(../images/logo-strava.png) no-repeat center #f36523; }
   .social-links .item {
-    background-size: 8em; }
+    background-size: 8em;
+    display: inline-block;
+    float: left; }
     .social-links .item a {
       padding: 2.5em 1em; }
   .social-links .item:first-child:nth-last-child(1) {
@@ -579,10 +596,13 @@ mobile. Make sure to double check these!
 /* Pages */
 /* frontpage */
 .frontpage-top-banner .logo {
-  display: inline-block; }
+  font-size: 1em; }
 
 .home #main {
   padding: 3em; }
+
+.home #content {
+  padding-top: 2.5em; }
 
 .section-events-calendar .container {
   padding: 3em; }
@@ -605,18 +625,39 @@ mobile. Make sure to double check these!
 #toggle-menu {
   display: none; }
 
-.page-section .container {
-  padding: 2.5em; }
+.page-section {
+  margin-bottom: 3.2em; }
+  .page-section .container {
+    padding: 2.5em; }
 
 /* Club Kit */
 .section-club-kit .cta-badge {
   display: block; }
 
 /* Calendar */
+.events-content-wrap {
+  display: block; }
+
+.events-nav-bar {
+  display: none; }
+
+.events-categories-list {
+  margin-bottom: 1.7em; }
+
 .latest-events-list {
-  text-align: left; }
+  color: #fff;
+  margin: 0 -0.5em; }
   .latest-events-list .item {
     display: block; }
+    .latest-events-list .item:nth-child(4) {
+      display: none; }
+    .latest-events-list .item .item-link {
+      min-height: 15em; }
+    .latest-events-list .item .item-content .title-wrap {
+      padding: 0.5em 1em; }
+    .latest-events-list .item .date {
+      font-size: 2.5em;
+      padding: 0.5em 1rem; }
 
 /******************************************************************
 Site Name:

@@ -128,7 +128,7 @@ HEADER STYLES
 		.search-field {
 			background-color: #337ec6;
 			border-radius: 100px;
-			margin: .6em 0;
+			margin: .5em 0;
 			padding: .3em 1em;
 			width: 5em;
 			color: $white;
@@ -161,9 +161,8 @@ HEADER STYLES
 
 	#logo {
 		display: inline-block;
-		margin: .4em 0;
+		margin: 0.6em 0;
 		vertical-align: top;
-		// margin-right: 2em;
 		img {
 			display: block;
 		}
@@ -898,7 +897,6 @@ FOOTER STYLES
 
 #footer {
 	clear: both;
-	padding-top: 1em;
 }
 
 .social-links {
@@ -906,29 +904,28 @@ FOOTER STYLES
   padding: 0;
   
   .item-facebook {
-    background: url(../images/icon-facebook.png) no-repeat center transparent;
+    background: url(../images/logo-facebook.png) no-repeat center #3a589e;
   }
 
   .item-twitter {
-    background: url(../images/icon-twitter.png) no-repeat center transparent;
+    background: url(../images/logo-twitter.png) no-repeat center #00aced;
   }
 
   .item-instagram {
-    background: url(../images/icon-instagram.png) no-repeat center transparent;
+    background: url(../images/logo-instagram.png) no-repeat center #3d6d95;
   }
 
   .item-vimeo {
-    background: url(../images/icon-vimeo.png) no-repeat center transparent;
+    background: url(../images/logo-vimeo.png) no-repeat center #4b7890;
   }
 
   .item-strava {
-    background: url(../images/icon-strava.png) no-repeat center transparent;
+    background: url(../images/logo-strava.png) no-repeat center #f36523;
   }
 
   .item {
-    display: inline-block;
-    float: left;
-    background-size: 3em;
+    display: block;
+    background-size: 6em;
     &:hover {
       opacity: .8;
     }
@@ -939,34 +936,6 @@ FOOTER STYLES
       display: block;
       outline: none;
     }
-  }
-
-  /* one item */
-  .item:first-child:nth-last-child(1) {
-    width: 100%;
-  }
-
-  /* two items */
-  .item:first-child:nth-last-child(2),
-  .item:first-child:nth-last-child(2) ~ li {
-    width: 50%;
-  }
-
-  /* three items */
-  .item:first-child:nth-last-child(3),
-  .item:first-child:nth-last-child(3) ~ li {
-    width: 33.3333%;
-  }
-
-  /* four items */
-  .item:first-child:nth-last-child(4),
-  .item:first-child:nth-last-child(4) ~ li {
-    width: 25%;
-  }
-  /* four items */
-  .item:first-child:nth-last-child(5),
-  .item:first-child:nth-last-child(5) ~ li {
-    width: 20%;
   }
 }
 
@@ -993,12 +962,12 @@ FOOTER STYLES
 	.copyright {}
 
 .page-section {
-	margin-bottom: 3em;
+	margin-bottom: 1.7em;
 	
 	.container {
     background-color: $white;
     box-shadow: 0px 0px 14px 4px #e0e0e0;
- 		padding: 1em;
+ 		padding: 1.5em 1em;
 	}
 }
 

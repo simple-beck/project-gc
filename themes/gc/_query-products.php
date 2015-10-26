@@ -1,12 +1,12 @@
 <?php $the_query= new WP_Query("post_type=product&orderby=menu_order&order=DESC&posts_per_page=4"); ?>
 <?php if($the_query->have_posts()):?>
 
-  <ul class="product-list">
+  <ul class="product-list row">
     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
     <?php  $src = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ), 'product-thumb' ); ?>
 
-    <li class="item">
-      <a href="<?php the_permalink() ?>" class="fancybox fancybox.ajax">
+    <li class="item col-xs-6 col-sm-3">
+      <a class="item-link fancybox fancybox.ajax" href="<?php the_permalink() ?>">
         <img class="featured-image" src="<?php echo $src[0]; ?>" alt="">
 
         <h3 class="item-title">
@@ -29,33 +29,53 @@
 <?php wp_enqueue_script( 'lightslider' ); ?>
 <script type="text/javascript">
 jQuery(document).ready(function($){
- 
-  $(".product-list .item a").fancybox({
-    beforeShow: function( current, previous ){
-      console.log( 'google' );
-       $('.images-list').lightSlider({
-          gallery:true,
-          item:1,
-          vertical:true,
-          verticalHeight:500,
-          vThumbWidth:170,
-          vThumbHeight:170,
-          thumbItem:3,
-          thumbMargin:4,
-          slideMargin:0,
-          controls: 0,
-       });
-    },    
-    maxWidth  : 850,
-    // maxHeight : 600,
-    fitToView : false,
-    width   : '80%',
-    height    : '90%',
-    autoSize  : false,
-    closeClick  : false,
-    padding  : 0,
-    openEffect  : 'none',
-    closeEffect : 'none',
+
+  
+  $(".product-list .item .item-link").on('click', function(e){
+    e.preventDefault();
+
+    $('#loaded-item-placeholder').load( $(this).attr('href'), function(){
+
+      var is_vertical = false;
+
+      // Get view port
+      viewport = updateViewportDimensions();
+      // if we're above or equal to 768 fire this off
+      if( viewport.width >= 768 ) {
+        is_vertical = true;
+
+        // swap info div with images-list
+        $( '.type-product' ,'#loaded-item-placeholder' ).append( $( '.type-product .product-info' ,'#loaded-item-placeholder' ) );
+      }
+
+      $('.images-list').lightSlider({
+        gallery:true,
+        item:1,
+        vertical: is_vertical,
+        verticalHeight:400,
+        vThumbWidth:170,
+        thumbItem:3,
+        thumbMargin:4,
+        slideMargin:0,
+        controls: 0,
+      });
+
+      // open fancybox
+      $.fancybox({
+         'href' : '#loaded-item-placeholder',
+          maxWidth  : 850,
+          fitToView : false,
+          width   : '100%',
+          height    : '90%',
+          autoSize  : false,
+          closeClick  : false,
+          padding  : 0,
+          openEffect  : 'none',
+          closeEffect : 'none',            
+      });
+
+    });
+
   });
 
 });

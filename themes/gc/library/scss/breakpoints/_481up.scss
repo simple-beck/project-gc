@@ -115,3 +115,42 @@ do they need tweaking?
 	}
 } /* end .footer-links */
 
+
+.product-list {
+  .item {
+  	
+    a {
+    }
+    .featured-image {
+
+    }
+    .item-title {
+    }
+
+    .link-edit {
+    }
+  }
+}
+
+.latest-events-list {
+  .item {
+    .date {
+      font-size: 2.5em;
+      padding: .5rem;
+    }    
+  }
+}
+
+.section-club-membership {
+
+  .submit-wrap {
+    text-align: left;
+    .col-sm-6 {
+			width: 50%;
+			float: left;
+			&:first-child {
+				margin-top: 1.5em;
+			}   
+    }
+  }
+}

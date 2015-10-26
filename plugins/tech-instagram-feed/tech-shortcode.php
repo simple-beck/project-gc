@@ -146,7 +146,7 @@ wp_enqueue_style('techstyle',TECH_PLUGIN_URL.'lib/style/tech_style.css');
 <span class="techinstagram-panel-following techinstagram-panel-counter"> <i class="techinstagram-panel-counter-value"> <?php echo $resultuserdata->data->counts->follows;?></i> 
 <span class="techinstagram-panel-counter-label">following</span> </span> 
 <a class="techinstagram-panel-subscribe" href="http://instagram.com/<?php echo $resultuserdata->data->username;?>" target="_blank">Follow</a> </div><?php }?>
-<div class="tech_insta_feed" style="padding:3px; overflow-x:<?php echo $overfllow;?>; background-color:<?php echo $feed_background_color;?>; height:<?php echo $feed_section_height.$feed_section_height_unit;?>; width:<?php echo $feed_section_width.$feed_section_width_unit;?>;">
+<div class="tech_insta_feed" style=" overflow-x:<?php echo $overfllow;?>; background-color:<?php echo $feed_background_color;?>; height:<?php echo $feed_section_height.$feed_section_height_unit;?>; width:<?php echo $feed_section_width.$feed_section_width_unit;?>;">
 <?php	
 	}	
 		if($FeedSortBy=='random'){	

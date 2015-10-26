@@ -9,10 +9,9 @@ $current_url = tribe_events_get_current_filter_url();
 ?>
 <?php 
   wp_enqueue_script( 'bootstrap-datepicker', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap-datepicker.min.js' ); 
-  wp_enqueue_style( 'tribe-events-bootstrap-datepicker', get_stylesheet_directory_uri() . '/library/css/datepicker.css' ); 
 ?>
 
-<div class="event-nav-bar">
+<div class="events-nav-bar">
 
   <form id="tribe-bar-form" class="tribe-clearfix" name="tribe-bar-form" method="post" action="<?php echo esc_attr( $current_url ); ?>">
     
@@ -171,7 +170,7 @@ jQuery(document).ready(function($){
   });
   
   // Click on single even in Calendar
-  $('.latest-events-list .item .link').on('click', function(e){
+  $('.latest-events-list .item .item-link').on('click', function(e){
     e.preventDefault();
 
     app.events.load_single_event( $(this).data('event_id') );

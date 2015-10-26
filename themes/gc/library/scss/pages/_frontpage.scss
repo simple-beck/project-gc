@@ -1,7 +1,7 @@
 .home {
 
   #content {
-    margin-top: 2.5em;
+    margin-top: 1.5em; // 2.5
   }
 
   #inner-content {
@@ -21,14 +21,20 @@
       }
     }
   }
-  
+}
+
+.two-column-text {
+  .vc_col-sm-6 {
+    width: 50%;
+    float: left;
+  }
 }
 
 /* frontpage top banner */
 .frontpage-top-banner {
   position: relative;
   .logo {
-    display: none;
+    display: inline-block;
     position: absolute;
     z-index: 10001;    
     width: 18.5em;
@@ -36,7 +42,7 @@
     left: 0;
     top: 1em;
     margin: auto;
-    // font-size: 1.6em;
+    font-size: .8em;
     outline: none;
 
     &:before {
@@ -50,29 +56,15 @@
   }
 }
 
-/* Categories List */
-.events-categories-list {
-  .item {
-    display: inline-block;    
-    margin-right: 1em;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-  .ic-block {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    font-size: 1.2em;
-    vertical-align: text-bottom;
-    margin-right: .2em;
-  }
-}
-
 /* Instagram */
 .techinstagramlink-content {
   .instagram-unit-col2 {
-    width: 49%;
+    width: 48%;
+    padding: 1% !important;
+    img {
+      width: 100%;
+      border: 1px solid #646464;
+    }
   }
 
   .loadbutton {
@@ -91,7 +83,16 @@
 /* GCCS Club Membership */
 .section-club-membership {
   .column-join-club {
-
+    margin-bottom: 3em;
+  }
+  .submit-wrap {
+    text-align: left;
+    .col-sm-6 {
+      margin-bottom: 1rem;
+    }
+    .ajax-loader {
+      float: right;
+    }
   }
 }
 
@@ -99,21 +100,27 @@
   li {
     border-bottom: 1px solid #c8c8c8;
     list-style: none;
-    padding:  0 0 .3em 0;
-    margin-bottom: .3em;
+    padding:  .7em 0;
   }
   label {
     display: inline-block;
-    min-width: 8em;
+    min-width: 8.5em;
+    float: left;
+    color: #646464;
+  }
+  .wpcf7-form-control-wrap {
+    overflow: auto;
+    display: block;
   }
   input[type="text"],
   input[type="tel"],
   input[type="email"] {
     display: inline-block;
     min-width: 0;
-    width: auto;
-    max-width: none;
     background: transparent;
+    line-height: inherit;
+    padding: 0;
+    margin: 0;
   }
   textarea {
     background: transparent;
@@ -152,11 +159,13 @@
   .subscribe {
     font-size: .85em;
     color: inherit;
+    display: inline;
   }
   .link-newsletter {
     text-decoration: none;
     font-size: .85em;
     font-weight: 500;
+    vertical-align: top;
   }
 
   .ajax-loader {
@@ -184,7 +193,7 @@
   right: 1.5em;
   text-align: center;
   z-index: 1;
-  font-size: 1.6em;
+  font-size: 1.1em;
   &:before {
     height: 133%;
     bottom: -3em;
@@ -201,19 +210,19 @@
   }
 }
 
+/* Products */
 .product-list {
   text-align: center;
-  margin-left: -1em;
-  margin-right: -1em;
+  margin: 0 -.5em;
   .item {
     display: inline-block;
-    box-shadow: 0px 0px 10px 0px #ccc;
-    margin: 1em;
-    padding: .5em .6em;
     position: relative;
     text-align: center;
-
-    a {
+    padding: 0 .5em;
+    .item-link {
+      box-shadow: 0px 0px 10px 0px #ccc;
+      margin: .5em 0;
+      padding: .5em;
       display: block;
       text-decoration: none;
     }
@@ -243,7 +252,7 @@
 }
 
 .type-product {
-  padding: 2rem;
+  padding: 2em 1em;
   .images-list-wrap {
     margin-bottom: 3rem;
   }
@@ -251,6 +260,10 @@
     margin: 0;
   }
   
+  .product-info {
+    margin-bottom: 1em;
+  }
+
   .product-title {
     font-family: $ridelife;
     color: $blue;
