@@ -147,7 +147,6 @@ em,
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -158,6 +157,7 @@ p {
   -webkit-hyphens: auto;
   -epub-hyphens: auto;
   -moz-hyphens: auto;
+  -ms-hyphens: auto;
   hyphens: auto; }
 
 /*
@@ -369,8 +369,6 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -411,8 +409,6 @@ table {
   border-spacing: 0; }
 
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .image-replacement,
@@ -532,12 +528,12 @@ p {
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
+  -ms-hyphens: auto;
   hyphens: auto;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 3;
   -webkit-font-feature-settings: "liga", "dlig";
-  -moz-font-feature-settings: "liga=1, dlig=1";
   -ms-font-feature-settings: "liga", "dlig";
   -o-font-feature-settings: "liga", "dlig";
   font-feature-settings: "liga", "dlig";
@@ -1816,9 +1812,6 @@ body.snap-js {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   -webkit-transition: width 0.3s ease;
-  -moz-transition: width 0.3s ease;
-  -ms-transition: width 0.3s ease;
-  -o-transition: width 0.3s ease;
   transition: width 0.3s ease; }
 
 .snap-drawer-right {
@@ -1865,8 +1858,6 @@ body.snap-js {
   z-index: 8030; }
 
 .fancybox-opened .fancybox-skin {
-  -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); }
 
 .fancybox-outer, .fancybox-inner {
@@ -2035,8 +2026,6 @@ body.snap-js {
   background: transparent;
   /* Fallback for web browsers that doesn't support RGBa */
   background: rgba(0, 0, 0, 0.8);
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
   border-radius: 15px;
   text-shadow: 0 1px 2px #222;
   color: #FFF;
@@ -2106,7 +2095,6 @@ body.snap-js {
   transform: translate(0px, 0px);
   -webkit-transition: all 1s;
   -webkit-transition-property: -webkit-transform,height;
-  -moz-transition-property: -moz-transform,height;
   transition-property: transform,height;
   -webkit-transition-duration: inherit !important;
   transition-duration: inherit !important;
@@ -2226,6 +2214,7 @@ body.snap-js {
   margin-top: -1em;
   opacity: 1;
   color: #b1b1b1;
+  -webkit-transition: opacity 0.35s linear 0s;
   transition: opacity 0.35s linear 0s; }
 
 .lSAction > a:hover {
@@ -2410,7 +2399,6 @@ body.snap-js {
 /*/  GRab cursor */
 .lightSlider.lsGrab > * {
   cursor: -webkit-grab;
-  cursor: -moz-grab;
   cursor: -o-grab;
   cursor: -ms-grab;
   cursor: grab; }
@@ -2418,7 +2406,6 @@ body.snap-js {
 .lightSlider.lsGrabbing > * {
   cursor: move;
   cursor: -webkit-grabbing;
-  cursor: -moz-grabbing;
   cursor: -o-grabbing;
   cursor: -ms-grabbing;
   cursor: grabbing; }
@@ -2920,6 +2907,7 @@ body.snap-js {
     padding: .3em;
     border: 1px solid #e0ebf6; }
   .tribe-events-calendar td {
+    -webkit-transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
     transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
     height: 100px;
     border: 1px solid #d2d2d2;
@@ -3550,13 +3538,14 @@ FOOTER STYLES
     width: 18.5em;
     right: 0;
     left: 0;
-    top: 1em;
+    top: 1.4em;
     margin: auto;
     font-size: .8em;
     outline: none; }
     .frontpage-top-banner .logo:before {
       font-size: 2.5em;
-      height: 120%; }
+      height: 140%;
+      bottom: -2.2em; }
     .frontpage-top-banner .logo img {
       display: block; }
 
@@ -4121,8 +4110,6 @@ mobile. Make sure to double check these!
     padding-right: 4em; }
   .section-gccs-social .container {
     padding: 3em; }
-  .section-gccs-social .column-2 {
-    padding-left: 8em; }
   #header .search-form {
     display: inline-block; }
   #toggle-menu {
@@ -4199,7 +4186,7 @@ on larger screens.
 
 ******************************************************************/
   .frontpage-top-banner .logo {
-    font-size: 1.6em; }
+    font-size: 1.5em; }
   #header .search-form .search-field {
     width: 9em; }
   .top-nav .menu-item a {
@@ -4234,6 +4221,7 @@ though, go for it.
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
+    -webkit-filter: none !important;
     filter: none !important;
     -ms-filter: none !important; }
   a, a:visited {

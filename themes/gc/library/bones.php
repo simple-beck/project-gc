@@ -368,7 +368,7 @@ function get_simple_section( $slug, $args = array() ){
 
   $section = get_simple_post( $slug );
 
-  $html = '<section class="'. $class .'">';
+  $html = '<section class="'. $class .'" id="'. $slug .'-'. $section->ID .'" >';
   $html .= '<div class="container">';
 
   $html .= get_vc_custom_css( $section->ID );

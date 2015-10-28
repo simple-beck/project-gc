@@ -39,7 +39,7 @@
         </div>
 
         
-        <section class="page-section section-events-calendar">
+        <section id="section-events-calendar" class="page-section section-events-calendar">
           <div class="container">
             
             <div class="row">
@@ -61,7 +61,7 @@
           </div>
         </section>
 
-        <section class="page-section section-club-kit">
+        <section id="section-club-kit" class="page-section section-club-kit">
           <?php $section = get_simple_post('club-kit'); ?>
           <?php echo get_vc_custom_css( $section->ID ); ?>
 

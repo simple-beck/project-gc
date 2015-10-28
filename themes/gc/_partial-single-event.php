@@ -10,7 +10,7 @@
 
       <ul class="meta-info">
         <li><label>What:</label> <?php echo $event->post_title; ?></li>
-        <li><label>Whare:</label> <?php echo tribe_events_event_schedule_details( $event_id ); ?></li>
+        <li><label>When:</label> <?php echo tribe_events_event_schedule_details( $event_id ); ?></li>
 
         <?php if ( tribe_address_exists( $event_id ) ) : ?>
           <li><label>Where:</label> <?php echo tribe_get_full_address( $event_id ); ?></li>
