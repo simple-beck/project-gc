@@ -632,14 +632,11 @@ mobile. Make sure to double check these!
   display: block; }
 
 .type-product {
-  padding: 2em; }
+  padding: 2.7em; }
 
 /* Calendar */
 .events-content-wrap {
   display: block; }
-
-.events-nav-bar {
-  display: none; }
 
 .events-categories-list {
   margin-bottom: 1.7em; }

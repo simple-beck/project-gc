@@ -63,7 +63,7 @@ jQuery(document).ready(function($){
       // open fancybox
       $.fancybox({
          'href' : '#loaded-item-placeholder',
-          maxWidth  : 850,
+          maxWidth  : 839,
           fitToView : false,
           width   : '100%',
           height    : '90%',
