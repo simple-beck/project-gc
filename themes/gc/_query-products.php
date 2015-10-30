@@ -64,9 +64,10 @@ jQuery(document).ready(function($){
       $.fancybox({
          'href' : '#loaded-item-placeholder',
           maxWidth  : 839,
+          minHeight  : 617,
           fitToView : false,
           width   : '100%',
-          height    : '90%',
+          // height    : '90%',
           autoSize  : false,
           closeClick  : false,
           padding  : 0,
