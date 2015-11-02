@@ -202,6 +202,29 @@ function cmb2_metaboxes( array $meta_boxes ) {
 
 		),
 	);	
+	// Start with an underscore to hide fields from custom fields list
+	$prefix = '_event_';
+
+	/**
+	 * product meta boxes
+	 */
+	$meta_boxes['event_metabox'] = array(
+		'id'            => 'event_metabox',
+		'title'         => __( 'Misc', 'cmb2' ),
+		'object_types'  => array( 'tribe_events', ), // Post type
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, // Show field names on the left
+		'fields'        => array(
+
+			array(
+				'name' => 'Is Featured',
+				'id' => $prefix .'is_featured',
+				'type' => 'checkbox',
+			),
+
+		),
+	);	
 
 	// Add other metaboxes as needed
 	return $meta_boxes;

@@ -31,6 +31,8 @@
   // Retrieve the next 3 upcoming events
   $events = tribe_get_events( array(
     'posts_per_page' => 4,
+    'meta_key' => '_event_is_featured',
+    'meta_value' => 'on',
   ) );
 ?>
 
