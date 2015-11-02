@@ -122,6 +122,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 		if ( empty( $event->EventStartDate ) && is_object( $event ) ) {
 			$event->EventStartDate = tribe_get_event_meta( $event->ID, '_EventStartDate', true );
 		}
+		
 
 		if ( isset( $event->EventStartDate ) ) {
 			$date = strtotime( $event->EventStartDate );
