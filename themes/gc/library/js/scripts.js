@@ -175,6 +175,27 @@ var app = {
         jQuery('.snap-drawers').remove();
       }
     }
+  },
+
+  enable_smoothscroll : function(){
+    /*Smooth scroll*/
+    jQuery('a[href*=#]:not([href=#]):not([href*=#vc_images])').on('click', function() {
+
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = jQuery(this.hash);
+        target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+
+          jQuery('a[href*=#]:not([href=#]):not([href*=#vc_images])').removeClass('active');
+          jQuery(this).addClass('active');
+
+          jQuery('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000 );
+          return false;
+        }
+      }
+    });
   }
 }
 
@@ -182,24 +203,6 @@ var app = {
  * Put all your regular jQuery in here.
 */
 jQuery(document).ready(function($) {
-
-  /*Smooth scroll*/
-  $('a[href*=#]:not([href=#]):not([href*=#vc_images])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-
-        $('a[href*=#]:not([href=#]):not([href*=#vc_images])').removeClass('active');
-        $(this).addClass('active');
-
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
 
   /*
    * Let's fire off the gravatar function
@@ -218,6 +221,13 @@ jQuery(document).ready(function($) {
       app.side_menu.menu.open('right');
     }
   });
+
+  viewport = updateViewportDimensions();
+  // if we're above or equal to 768 fire this off
+  if( viewport.width >= 768 ) {
+
+    app.enable_smoothscroll();
+  }
 
   // Handle differences on window resize
   $(window).resize(function () {
