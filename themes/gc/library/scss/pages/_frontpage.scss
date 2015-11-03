@@ -88,7 +88,7 @@
   }
   .submit-wrap {
     text-align: left;
-    .col-sm-6 {
+    .col-sm-6:first-child() {
       margin-bottom: 1rem;
     }
     .ajax-loader {
